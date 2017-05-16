@@ -15,6 +15,8 @@ Rails.application.routes.draw do
       member do
         patch :move_up
         patch :move_down
+        patch :move_top
+        patch :move_bottom
       end
     end
   end

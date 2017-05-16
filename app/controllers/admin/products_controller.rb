@@ -56,6 +56,18 @@ class Admin::ProductsController < ApplicationController
     redirect_to :back
   end
 
+  def move_top
+    @product = Product.find(params[:id])
+    @product.move_to_top
+    redirect_to :back
+  end
+
+  def move_bottom
+    @product = Product.find(params[:id])
+    @product.move_to_bottom
+    redirect_to :back
+  end
+
   private
 
   def product_params

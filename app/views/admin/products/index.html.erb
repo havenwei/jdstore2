@@ -38,9 +38,13 @@
         |
         <%= link_to("Destory", admin_product_path(product), method: :delete, data: {confirm: "Are you sure?"}) %>
         <br />
-        <%= link_to "向上", move_up_admin_product_path(product), method: :patch %>
+        <%= link_to("向上", move_up_admin_product_path(product), method: :patch) %>
         ｜
-        <%= link_to "向下", move_down_admin_product_path(product), method: :patch %>
+        <%= link_to("向下", move_down_admin_product_path(product), method: :patch) %>
+        <br />
+        <%= link_to("置顶", move_top_admin_product_path(product), method: :patch) %>
+        |
+        <%= link_to("置底", move_bottom_admin_product_path(product), method: :patch) %>
       </td>
       <td><%= product.created_at %></td>
     </tr>
