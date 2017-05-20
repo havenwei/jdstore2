@@ -1,4 +1,22 @@
 <style media="screen">
+.pdt-ind {
+    background: linear-gradient( rgba(36,65,75,0.3), rgba(36,65,75,0.3) ), url(""); //在背景图片上做渐变效果 线性渐变 颜色号 图片地址
+    display: block;
+    background-attachment: fixed; //fixed使得背景图片缩放比例适中；如果使用auto就会放大到只看到图片的一个部分
+    background-repeat: no-repeat; //背景图片不重复放置
+    background-position: center top; //使得背景图片在页面中 置中、置顶
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; //cover使得背景图片在页面中铺满
+    border-style: none;
+    margin-left: auto; //修改后无变化
+    margin-right: auto; //修改后无变化
+    margin-bottom: 0; //修改后无变化
+    border-radius: 0; //修改后无变化
+    min-height: 2880px; //背景图片的高度设置!!!!
+    position: relative;
+}
   .productsshow-evey{
 padding-left: 40px;
 padding-right: 40px;
@@ -26,52 +44,54 @@ background-repeat: repeat-y;
   }
 
 </style>
-<div class="productsshow-evey">
+<body class="pdt-ind">
+  <div class="productsshow-evey">
 
 
-  <div class="col-md-6" style="padding-top:30px;">
-    <% if @product.image.present? %>
+    <div class="col-md-6" style="padding-top:30px;">
+      <% if @product.image.present? %>
 
 
-    <div id="zoom_01">
-      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+      <div id="zoom_01">
+        <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+      </div>
+
+
+      <% else %>
+        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+      <% end %>
     </div>
 
+    <div class="col-md-6 pdc-description">
+      <h2> <%= @product.title %> </h2>
 
-    <% else %>
-      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-    <% end %>
+      <div style="height:100px;">
+
+        <p>
+          <%= @product.description %>
+        </p >
+        <hr>
+      </div>
+      <div> 数量 : <%= @product.quantity %> </div>
+    </br>
+
+      <div class="product-price"> ￥ <%= @product.price %> </div>
+
+  <!--加入购物车开始-->
+      <div class="pull-right" style="margin-top:10px;">
+        <% if @product.quantity > 0 %>
+      <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-lg btn-warning fa fa-shopping-cart") %>
+     <% else %>
+      已销售一空
+     <% end %>
+
+      </div>
+
+  <!--加入购物车结束-->
+
+    </div>
+
   </div>
-
-  <div class="col-md-6 pdc-description">
-    <h2> <%= @product.title %> </h2>
-
-    <div style="height:100px;">
-
-      <p>
-        <%= @product.description %>
-      </p >
-      <hr>
-    </div>
-    <div> 数量 : <%= @product.quantity %> </div>
-  </br>
-
-    <div class="product-price"> ￥ <%= @product.price %> </div>
-
-<!--加入购物车开始-->
-    <div class="pull-right" style="margin-top:10px;">
-      <% if @product.quantity > 0 %>
-    <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-lg btn-warning fa fa-shopping-cart") %>
-   <% else %>
-    已销售一空
-   <% end %>
-
-    </div>
-
-<!--加入购物车结束-->
-
-  </div>
-
 </div>
 
 
