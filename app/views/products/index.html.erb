@@ -1,17 +1,4 @@
-<!-- <div class="row">
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag(url_to_image("NoPic"), class: "thumbnail") %>
-        <% end %>
-      <% end %>
-      <%= product.title %> ￥ <%= product.price %>
-    </div>
-  <% end %>
-</div> -->
+
 
 <head>
 
@@ -49,7 +36,7 @@ text-decoration: none;
 
 
 .pdt-index {
-    background: linear-gradient( rgba(36,65,75,0.3), rgba(36,65,75,0.3) ), url("http://img02.tooopen.com/images/20160516/tooopen_sy_162598677523.jpg"); //在背景图片上做渐变效果 线性渐变 颜色号 图片地址
+    background: linear-gradient( rgba(36,65,75,0.3), rgba(36,65,75,0.3) ), url(""); //在背景图片上做渐变效果 线性渐变 颜色号 图片地址
     display: block;
     background-attachment: fixed; //fixed使得背景图片缩放比例适中；如果使用auto就会放大到只看到图片的一个部分
     background-repeat: no-repeat; //背景图片不重复放置
@@ -152,44 +139,6 @@ text-decoration: none;
 
 <div class="products-evey">
 
-<!--题头内容开始-->
-<div class="qbbb">
-  <h2 class="productstitle" style="">全部宝贝</h2>
-  <hr>
-  <table>
-    <tr>
-      <td><div class="smallcircle">邮</div></td>
-      <td class="qbbb-text">全国包邮
-        <br>卖家承担从卖家处发货到您收货地址处的大陆非偏远地区首次发货的运费。</td>
-
-    </tr>
-
-    <tr>
-      <td><div class="smallcircle">保</div></td>
-      <td class="qbbb-text">退货运费险
-<br>卖家承诺提供退货运费险，在交易成功前，消费者发起退货请求，保险公司对退货产生的单程运费提供保险服务。</td>
-
-    </tr>
-
-    <tr>
-      <td><div class="smallcircle">发</div></td>
-      <td class="qbbb-text">48小时发货
-<br>卖家承诺在您付款后的48小时内完成发货，以快递公司系统内揽件记录的时间为准（定制、预售、等特殊类目除外）。</td>
-
-    </tr>
-
-    <tr>
-      <td><div class="smallcircle">退</div></td>
-      <td class="qbbb-text">质无忧
-        <br>商家承诺所售商品如因“不喜欢/不想要/不适合”或质量问题发生退货退款，可向交易诚信记录良好的消费者提供闪电退货和极速退款服务。</td>
-
-    </tr>
-  </table>
-
-  <hr>
-</div>
-
-<!--题头内容结束-->
 
 
 
@@ -201,19 +150,20 @@ text-decoration: none;
 
 
 <div class="nav-text">
-     <%= link_to carts_path, :class => "nav-text"  do  %>
+  <%= link_to carts_path, :class => "nav-text"  do  %>
     <div class="nav-inside">
-我的购物车 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-  </div>
-<% end %>
+      我的购物车 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+    </div>
+  <% end %>
 </div>
 
 <div class="nav-text">
-     <%= link_to carts_path, :class => "nav-text"  do  %>
+  <%= link_to account_orders_path, :class => "nav-text"  do  %>
     <div class="nav-inside">
-我的购物车2 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-  </div>
-<% end %>
+      我的订单 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+
+    </div>
+  <% end %>
 </div>
 
 
@@ -228,18 +178,14 @@ text-decoration: none;
   <% @products.each do |product| %>
   <div class="col-xs-6 col-md-3 boxcenter">
 
-
     <%= link_to product_path(product) do %>
 
-
     <% if product.image.present? %>
-
 
     <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
     <% else %>
 
       <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-
 
     <% end %>
     <% end %>
