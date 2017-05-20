@@ -1,3 +1,203 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+.hero {
+    background: linear-gradient( rgba(36,65,75,0.3), rgba(36,65,75,0.9) ), url("http://pic1.win4000.com/wallpaper/6/53be06a4e49a7.jpg"); //在背景图片上做渐变效果 线性渐变 颜色号 图片地址
+    display: block;
+    background-attachment: fixed; //fixed使得背景图片缩放比例适中；如果使用auto就会放大到只看到图片的一个部分
+    background-repeat: no-repeat; //背景图片不重复放置
+    background-position: center top; //使得背景图片在页面中 置中、置顶
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; //cover使得背景图片在页面中铺满
+    border-style: none;
+    margin-left: auto; //修改后无变化
+    margin-right: auto; //修改后无变化
+    margin-bottom: 0; //修改后无变化
+    border-radius: 0; //修改后无变化
+    min-height: 2880px; //背景图片的高度设置!!!!
+    position: relative;
+    color: white; //box中，所有字体的颜色（除了 按钮字体色）
+    .cta-button {
+        padding-top: 30px; //box中，报名按钮上边缘 与 框框文字下边缘的 间距
+        margin: 0 auto;
+        width: 200px; //box中，报名按钮的方框 宽度大小
+        padding-bottom: 30px; //box中，报名按钮上边缘 与 背景下边缘的 间距
+    }
+    .hero-item-wrapper {
+        width: 100%; //box中，100%指框框文字在box的中间位置，数值可以调整文字在页面上的左右位置
+    }
+    .course-cost {
+        font-size: 40px; //box中，框框第一行文字大小
+    }
+}
+.hero-item-group {
+    width: 500px; //box中，框框文字的左右位置
+    margin: 0 auto; //box中，框框文字的左右位置
+    padding-top: 30px; //box中，框框文字的上边缘与段落文字下边缘的间距
+    .left {
+        margin-left: 30px; //box中，框框文字的左右位置
+        margin-right: 20px; //box中，框框文字的左右位置
+    }
+    .right {
+        margin-left: 20px;  //box中，框框文字的左右位置
+    }
+    .hero-item {
+        margin-top: 10px; //box中，框框文字的上边缘与段落文字下边缘的间距
+        padding: 20px; //box中，框框文字的边框高度
+        float: left; //box中，框框文字的边框宽度及上下位置
+        min-width: 170px; //box中，框框文字的边框宽度及上下位置
+        border: 2px solid white; //box中，绘制框框文字的 边框粗度、颜色
+    }
+}
+@media only screen and (max-width : 480px) {  //box中，框框文字的左右位置
+    .hero-item-group {
+        width: 60%;  //修改后无变化
+        .left{
+          margin-left: 20px; //修改后无变化
+        }
+        .right{
+          margin-left: 20px; //修改后无变化
+        }
+    }
+}
+.hero-title {
+    padding-top: 40px; //box中，title文字的上边缘与上边缘框的间距
+    padding-left: 30px; //box中，让title文字居中，文字与左边缘框的间距
+    padding-right: 30px; //box中，让title文字居中，文字与右边缘框的间距
+    h1 {
+        font-size: 48px; //box中，调整title <h1>标题文字大小
+    }
+    p {
+        padding-top: 10px; //box中，段落<p>文字的上边缘与title文字下边缘框的间距
+        font-size: 18px; //box中，调整 段落<p>文字 的大小
+    }
+}
+.course-content-block {
+    margin-top: 30px; //block_1板块 与box底边缘 的间距 （5）
+    p {
+        margin-left: 20px; //block_1 的段落字体位置 （5）
+    }
+}
+.course-benefit {
+    h3 {
+        font-size: 22px; //block_1 的title字体大小
+        color: #42899d; //block_1 的title字体颜色
+        padding: 10px; //block_1 的title字体与上下的间距
+    }
+    p {
+        font-size: 14px; //block_1 的段落字体大小
+    }
+}
+h2.underline-title {
+    color: #42899d;  //block_2 的下划线颜色
+    border-bottom: 3px solid #42899d;  //block_2 的下划线宽度、颜色
+    padding-bottom: 10px;  //block_2板块中，title字与下划线的间距
+    width: 80%; //block_2 的下划线宽度
+    margin: auto;  //block_2板块中，title字与下划线 置中
+}
+.normal-content p {
+    margin-top: 30px; //block_2板块中，段落字体的间距 （5）
+    font-size: 18px; //block_2板块中，段落字体的大小 （5）
+}
+.ideal-students {
+    margin-top: 50px; //block_2板块 与block_1板块底边缘 的间距
+    margin-bottom: 50px; //block_2板块 与block_3板块顶边缘 的间距
+}
+.syllabus {
+    .content-block {
+        margin-top: 10px; //block_3板块中，title与段落字体的间距
+        margin-bottom: 10px; //block_3板块 与block_4板块的间距
+    }
+    h3 {
+        margin-bottom: 30px; //block_3板块中，段落字体<h3>的大小
+    }
+    .list {
+        margin-left: 10px; //block_3板块中，段落字体<h3>的放置位置
+    }
+}
+.teacher {
+    display: block;
+    background: linear-gradient( rgba(36,65,75,0.9), rgba(36,65,75,0.9) ), url("//d9hhrg4mnvzow.cloudfront.net/unbouncepages.com/xinsheng-full-stack/d50eb6b3-goodbank-form-background.png");
+    background-repeat: no-repeat;
+    background-position: center center; //修改后 block_5 没变化
+    -webkit-background-size: cover;
+    -moz-background-size: auto;
+    -o-background-size: cover;
+    background-size: cover;
+    border-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    border-radius: 0;
+    width: 100%; //block_5板块的背景宽度 左右增减
+    min-height: 40px; //block_5板块的背景高度 上下增减
+    position: relative;
+    color: white; //block_5板块的字体颜色
+    .left-content { //左边的文本
+        padding-top: 60px; //block_5中，左边的文本 距离背景上边缘的距离
+    }
+    .right-content { //右边的文本
+        height: 480px; //block_5中，右边的文本后的色块背景 的高度
+    }
+    @media only screen and (max-width : 480px) {
+        .right-content {
+            height: 280px;
+        }
+    }
+    .content-block {
+        h4 {
+            padding: 10px; //block_5中，左边段落字体的上下间距
+        }
+    }
+    .cta-form {
+        background-color: #24414B; //block_5中，右边的文本后的色块背景 的颜色
+        h2 {
+            padding-top: 30px; //block_5中，右边的文本的title，距离背景上边缘的间距
+            padding-left: 40px; //block_5中，右边的文本的title 的左右位置
+            font-size: 22px;//block_5中，右边的文本的title 的字体大小
+        }
+        p {
+            padding: 20px; //block_5中，右边的文本段落 与title的间距
+        }
+    }
+    .cta-button-block {
+        margin-top: 20px; //block_5中，右边的按钮 与文本段落的间距
+    }
+    @media only screen and (max-width : 480px) {
+        .cta-button-block {
+            margin-top: 500px;
+        }
+    }
+    a,
+    a:hover {
+        color: white;
+    }
+}
+.about-program {
+    padding-top: 20px; //block_6 与block_5板块的间距
+}
+.course-faq {
+    h2 {
+        padding: 10px 0; //block_7 的<h2>标题 与上面一个板块的间距
+    }
+    .faq-block {
+        padding: 10px 0 0; //block_7中，每个title+段落 的间距
+        h3 {
+            margin-bottom: 15px; //block_7中，title 与段落 的间距
+        }
+        p {
+            font-size: 16px; //block_7中，段落 的字体大小
+        }
+    }
+    margin-bottom: 80px; //block_7与 下面板块的间距
+}
+.course-result {
+    padding-top: 30px; //block_4板块 与block_3板块的间距
+    padding-bottom: 30px; //block_4板块 与block_5板块的间距
+}

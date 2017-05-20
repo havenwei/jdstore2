@@ -1,14 +1,240 @@
-<div class="row">
-  <% @products.each do |product| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to product_path(product) do %>
-        <% if product.image.present? %>
-          <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag(url_to_image("NoPic"), class: "thumbnail") %>
-        <% end %>
-      <% end %>
-      <%= product.title %> ￥ <%= product.price %>
+
+
+<head>
+
+</head>
+<style media="screen">
+  .products-evey{
+  margin-top: 30px;
+margin-left: 40px;/*-- --*/
+text-decoration: none;
+  }
+  .productstitle{
+    margin-left: 40px;
+    margin-bottom: 20px;
+  }
+  .productimage{
+    margin-bottom: 30px;
+  }
+  .productimage:hover{
+  }
+  .boxcenter{
+    margin: 0 auto;
+  }
+  #panel, #flip {
+    padding: 5px;
+    text-align: center;
+    //background-color: #d8d6d6;
+    background-color: grey;
+    border: solid 1px #c3c3c3;
+    color:white;
+}
+#panel {
+    padding: 30px;
+    display: none;
+}
+
+
+.pdt-index {
+    background: linear-gradient( rgba(36,65,75,0.3), rgba(36,65,75,0.3) ), url(""); //在背景图片上做渐变效果 线性渐变 颜色号 图片地址
+    display: block;
+    background-attachment: fixed; //fixed使得背景图片缩放比例适中；如果使用auto就会放大到只看到图片的一个部分
+    background-repeat: no-repeat; //背景图片不重复放置
+    background-position: center top; //使得背景图片在页面中 置中、置顶
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; //cover使得背景图片在页面中铺满
+    border-style: none;
+    margin-left: auto; //修改后无变化
+    margin-right: auto; //修改后无变化
+    margin-bottom: 0; //修改后无变化
+    border-radius: 0; //修改后无变化
+    min-height: 2880px; //背景图片的高度设置!!!!
+    position: relative;
+    color: white; //box中，所有字体的颜色（除了 按钮字体色）
+}
+
+
+
+.titlebox{
+  color:grey;
+  height:90px;
+  width:210px;
+  background-color:white ;
+  line-height: 50px;
+  clear: both;
+  margin-bottom: 50px;
+  text-align: center;
+  border-radius: 3px;
+}
+.titlebox:hover{
+  background-color:rgba(255,255,255,0.8);
+}
+.productstitle{
+  color: #edeeec;
+  text-align:left;
+  font-size: 30px;
+}
+.smallcircle{
+  width:50px;
+  height:50px;
+  background-color: #c5c5c5;
+  border-radius: 25px;
+  border:2px solid grey;
+  margin-bottom: 10px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 25px;
+  font-weight: bold;
+  position: relative;
+}
+.smallcircle:hover{
+  background-color: orange;
+  border: 2px solid white;
+  color:white;
+}
+.qbbb-text{
+  font-size:12px;
+  color: white;
+  position: relative;
+  left:20px;
+  top:-4px;
+}
+.nav-left{
+  height: 1900px;
+  //background-color: yellow;
+}
+.nav-inside{
+  width:90%;
+  height:50px;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 3px;
+  margin-bottom: 5px;
+  color: white;
+  line-height: 50px;
+  text-align: center;
+}
+.nav-inside:hover{
+  background-color: orange;
+  border:1px solid white;
+  text-decoration: none;
+}
+.nav-text{
+   color:white;
+   text-decoration: none;
+}
+.nav-text:hover{
+  color:white;
+  text-decoration: none;
+}
+</style>
+
+
+
+<body class="pdt-index">
+
+
+
+
+<div class="products-evey">
+
+
+
+
+<!--产品内容开始-->
+
+
+<!--左侧导航栏开始-->
+<div class="col-xs-6 col-md-3 nav-left">
+
+
+<div class="nav-text">
+  <%= link_to carts_path, :class => "nav-text"  do  %>
+    <div class="nav-inside">
+      我的购物车 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
     </div>
   <% end %>
 </div>
+
+<div class="nav-text">
+  <%= link_to account_orders_path, :class => "nav-text"  do  %>
+    <div class="nav-inside">
+      我的订单 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+
+    </div>
+  <% end %>
+</div>
+
+
+
+</div>
+<!--左侧导航栏结束-->
+
+
+
+
+
+  <% @products.each do |product| %>
+  <div class="col-xs-6 col-md-3 boxcenter">
+
+    <%= link_to product_path(product) do %>
+
+    <% if product.image.present? %>
+
+    <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+    <% else %>
+
+      <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+
+    <% end %>
+    <% end %>
+<div class="titlebox">
+
+      【<%= product.title %>】
+       <span class="" style="color:orange;font-weight:bold;">¥ <%= product.price %></span>
+
+
+
+       <!--加入购物车开始-->
+
+           <div style="float:left;position:absolute;top:260px;left:90px;">
+           <%= link_to("  加入购物车", add_to_cart_product_path(product), :method => :post, :class => "btn btn-warning fa fa-shopping-cart") %>
+           </div>
+
+       <!--加入购物车结束-->
+
+
+
+<div class="" style="height:30px;width:100%;">
+
+</div>
+
+    </div>
+
+<!--产品内容结束-->
+
+
+
+
+
+  </div>
+
+  <% end %>
+
+</div>
+
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
+<% yield :handwrite_javascript %>
+</body>
+
+<script>
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    });
+});
+$(".thumbnail").mouseenter(function () {
+    $(this).fadeOut(300).fadeIn(100)
+})
+</script>
