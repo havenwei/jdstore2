@@ -5,7 +5,7 @@ class Admin::ProductsController < ApplicationController
   layout "admin"
 
   def index
-    @products = Product.all
+    @products = Product.all.order("position ASC")
   end
 
   def show
@@ -42,6 +42,30 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
     redirect_to admin_products_path, alert: "Product deleted"
+  end
+
+  def move_up
+    @product = Product.find(params[:id])
+    @product.move_higher
+    redirect_to :back
+  end
+
+  def move_down
+    @product = Product.find(params[:id])
+    @product.move_lower
+    redirect_to :back
+  end
+
+  def move_top
+    @product = Product.find(params[:id])
+    @product.move_to_top
+    redirect_to :back
+  end
+
+  def move_bottom
+    @product = Product.find(params[:id])
+    @product.move_to_bottom
+    redirect_to :back
   end
 
   private

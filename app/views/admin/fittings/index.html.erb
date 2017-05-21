@@ -1,0 +1,45 @@
+<h2> Fitting List </h2>
+
+<%= link_to("Add new fitting", new_admin_fitting_path, class: "btn btn-default pull-right") %>
+
+<br /><br />
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th> 品名 </th>
+      <th> 货号 </th>
+      <th> 库存 </th>
+      <th> 价格 </th>
+      <th> 选项 </th>
+      <th> 创建日期 </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fittings.each do |fitting| %>
+    <tr>
+      <td>
+        <%= link_to admin_fitting_path(fitting) do %>
+          <% if fitting.image.present? %>
+            <%= image_tag(fitting.image.thumb.url, class: "thumbnail") %>
+          <% else %>
+            <%= image_tag(url_to_image('NoPic'),class: "thumbnail") %>
+          <% end %>
+        <% end %>
+      </td>
+      <td><%= link_to(fitting.title, admin_fitting_path(fitting)) %></td>
+      <td><%= fitting.pid %></td>
+      <td><%= fitting.quantity %></td>
+      <td><%= fitting.price %></td>
+      <td>
+        <%= link_to("Edit", edit_admin_fitting_path(fitting)) %>
+        |
+        <%= link_to("Destory", admin_fitting_path(fitting), method: :delete, data: {confirm: "Are you sure?"}) %>
+      </td>
+      <td><%= fitting.created_at %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
