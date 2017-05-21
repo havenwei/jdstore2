@@ -17,24 +17,5 @@
     min-height: 2880px; //背景图片的高度设置!!!!
     position: relative;
 }
+
 </style>
-
-<body class="pdt-ind">
-
-    <h2> <%= @product.title %> </h2>
-
-    <p>
-      商品描述：<%= simple_format(@product.description) %>
-    </p>
-
-    <p>
-      价格：<%= @product.price %>
-    </p>
-
-    <p>
-      库存：<%= @product.quantity %>
-    </p>
-    <br />
-    <%= link_to("<Back", admin_products_path) %>
-
-</body>
