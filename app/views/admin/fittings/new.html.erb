@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+      <h2> New Fitting </h2>
+
+      <%= simple_form_for [:admin, @fitting] do |f| %>
+        <%= f.input :title %>
+        <%= f.input :pid %>
+        <%= f.input :quantity %>
+        <%= f.input :price %>
+        <%= f.input :image, as: :file %>
+
+        <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+      <% end %>
+  </div>
+</div>

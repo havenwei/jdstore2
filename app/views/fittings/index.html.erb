@@ -1,0 +1,14 @@
+<div class="row">
+  <% @fittings.each do |fitting| %>
+    <div class="col-xs-6 col-md-3">
+      <%= link_to fitting_path(fitting) do %>
+        <% if fitting.image.present? %>
+          <%= image_tag(fitting.image.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag(url_to_image('NoPic'),class: "thumbnail") %>
+        <% end %>
+      <% end %>
+      <%= fitting.title %> ￥ <%= fitting.price %>
+    </div>
+  <% end %>
+</div>
