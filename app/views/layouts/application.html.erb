@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JDstore</title>
+    <title>晨光布艺</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -14,13 +14,13 @@
             <%= render "common/navbar" %>
           </div>
             <%= render "common/flashes" %>
-            <div class="row">
-              <%= yield %>
-            </div>
+
 
         </div>
+        <div class="row">
+          <%= yield %>
+        </div>
 
-    <%= render "common/footer" %>
 
   </body>
 </html>

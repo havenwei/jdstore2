@@ -6,7 +6,7 @@
 
 
 .hero {
-    background: linear-gradient( rgba(36,65,75,0.3), rgba(36,65,75,0.9) ), url("http://pic1.win4000.com/wallpaper/6/53be06a4e49a7.jpg"); //在背景图片上做渐变效果 线性渐变 颜色号 图片地址
+    background: linear-gradient( rgba(36,65,75,0.4), rgba(36,65,75,0.9) ), url("http://pic1.win4000.com/wallpaper/6/53be06a4e49a7.jpg"); //在背景图片上做渐变效果 线性渐变 颜色号 图片地址 http://pic1.win4000.com/wallpaper/6/53be06a4e49a7.jpg
     display: block;
     background-attachment: fixed; //fixed使得背景图片缩放比例适中；如果使用auto就会放大到只看到图片的一个部分
     background-repeat: no-repeat; //背景图片不重复放置
@@ -20,7 +20,7 @@
     margin-right: auto; //修改后无变化
     margin-bottom: 0; //修改后无变化
     border-radius: 0; //修改后无变化
-    min-height: 2880px; //背景图片的高度设置!!!!
+    min-height: 2660px; //背景图片的高度设置!!!!
     position: relative;
     color: white; //box中，所有字体的颜色（除了 按钮字体色）
     .cta-button {
@@ -67,7 +67,7 @@
     }
 }
 .hero-title {
-    padding-top: 40px; //box中，title文字的上边缘与上边缘框的间距
+    padding-top: 200px; //box中，title文字的上边缘与上边缘框的间距
     padding-left: 30px; //box中，让title文字居中，文字与左边缘框的间距
     padding-right: 30px; //box中，让title文字居中，文字与右边缘框的间距
     h1 {
@@ -79,7 +79,7 @@
     }
 }
 .course-content-block {
-    margin-top: 30px; //block_1板块 与box底边缘 的间距 （5）
+    margin-top: 300px; //block_1板块 与box底边缘 的间距 （5）
     p {
         margin-left: 20px; //block_1 的段落字体位置 （5）
     }

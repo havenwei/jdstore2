@@ -1,64 +1,93 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 ">
+<style media="screen">
+.pdt-ind {
+    background: linear-gradient(10deg, #82939e,#f7f0dc ), url(""); //在背景图片上做渐变效果 线性渐变 颜色号 图片地址
+    display: block;
+    background-attachment: fixed; //fixed使得背景图片缩放比例适中；如果使用auto就会放大到只看到图片的一个部分
+    background-repeat: no-repeat; //背景图片不重复放置
+    background-position: center top; //使得背景图片在页面中 置中、置顶
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; //cover使得背景图片在页面中铺满
+    border-style: none;
+    margin-left: auto; //修改后无变化
+    margin-right: auto; //修改后无变化
+    margin-bottom: 0; //修改后无变化
+    border-radius: 0; //修改后无变化
+    min-height: 2880px; //背景图片的高度设置!!!!
+    position: relative;
+}
 
-      <h2>购物明细</h2>
+</style>
 
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th width>商品明细</th>
-            <th>单价</th>
-            <th>数量</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% current_cart.cart_items.each do |cart_item| %>
+<!--对整页对背景样式设置 开始-->
+<body class="pdt-ind">
+
+  <!--订单填写页内容开始-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 ">
+
+        <h2>购物明细</h2>
+
+        <table class="table table-bordered">
+          <thead>
             <tr>
-              <td><%= link_to(cart_item.product.title, product_path(cart_item.product)) %></td>
-              <td><%= cart_item.product.price %></td>
-              <td><%= cart_item.quantity %></td>
+              <th width>商品明细</th>
+              <th>单价</th>
+              <th>数量</th>
             </tr>
+          </thead>
+          <tbody>
+            <% current_cart.cart_items.each do |cart_item| %>
+              <tr>
+                <td><%= link_to(cart_item.product.title, product_path(cart_item.product)) %></td>
+                <td><%= cart_item.product.price %></td>
+                <td><%= cart_item.quantity %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <div class="total clearfix">
+          <span class="pull-right">
+            总计 <%= render_cart_total_price(current_cart) %> CNY
+          </span>
+        </div>
+
+        <hr>
+
+        <h2> 订单资讯 </h2>
+
+        <div class="order-form">
+          <%= simple_form_for @order do |f| %>
+
+            <legend> 订购人 </legend>
+            <div class="from-group col-lg-6">
+              <%= f.input :billing_name %>
+            </div>
+            <div class="from-group col-lg-6">
+              <%= f.input :billing_address %>
+            </div>
+
+            <legend> 收货人 </legend>
+            <div class="from-group col-lg-6">
+              <%= f.input :shipping_name %>
+            </div>
+            <div class="from-group col-lg-6">
+              <%= f.input :shipping_address %>
+            </div>
+
+            <div class="checkout">
+              <%= f.submit "生成订单", class: "btn btn-lg btn-warning fa fa-shopping-cart pull-right",
+                          data: {disable_with: "Submitting..."} %>
+            </div>
+
           <% end %>
-        </tbody>
-      </table>
-
-      <div class="total clearfix">
-        <span class="pull-right">
-          总计 <%= render_cart_total_price(current_cart) %> CNY
-        </span>
-      </div>
-
-      <hr>
-
-      <h2> 订单资讯 </h2>
-
-      <div class="order-form">
-        <%= simple_form_for @order do |f| %>
-
-          <legend> 订购人 </legend>
-          <div class="from-group col-lg-6">
-            <%= f.input :billing_name %>
-          </div>
-          <div class="from-group col-lg-6">
-            <%= f.input :billing_address %>
-          </div>
-
-          <legend> 收货人 </legend>
-          <div class="from-group col-lg-6">
-            <%= f.input :shipping_name %>
-          </div>
-          <div class="from-group col-lg-6">
-            <%= f.input :shipping_address %>
-          </div>
-
-          <div class="checkout">
-            <%= f.submit "生成订单", class: "btn btn-lg btn-warning fa fa-shopping-cart pull-right",
-                        data: {disable_with: "Submitting..."} %>
-          </div>
-
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+  <!--购物车内容结束-->
+</body>
+<!--对整页对背景样式设置 结束-->

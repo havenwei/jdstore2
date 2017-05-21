@@ -1,28 +1,53 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-10">
-      <h2> 订单列表 </h2>
+<style media="screen">
+.pdt-ind {
+    background: linear-gradient( rgba(36,65,75,0.7),rgba(36,65,75,0.4) ), url(""); //在背景图片上做渐变效果 线性渐变 颜色号 图片地址
+    display: block;
+    background-attachment: fixed; //fixed使得背景图片缩放比例适中；如果使用auto就会放大到只看到图片的一个部分
+    background-repeat: no-repeat; //背景图片不重复放置
+    background-position: center top; //使得背景图片在页面中 置中、置顶
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; //cover使得背景图片在页面中铺满
+    border-style: none;
+    margin-left: auto; //修改后无变化
+    margin-right: auto; //修改后无变化
+    margin-bottom: 0; //修改后无变化
+    border-radius: 0; //修改后无变化
+    min-height: 2880px; //背景图片的高度设置!!!!
+    position: relative;
+}
 
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>生成订单</th>
-            <th>订购者</th>
-            <th>订单状态</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @orders.each do |order| %>
-          <tr>
-            <td><%= link_to(order.id, admin_order_path(order)) %></td>
-            <td><%= order.created_at.to_s(:long) %></td>
-            <td><%= order.user.email %></td>
-            <td><%= order.aasm_state %></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+</style>
+
+<body class="pdt-ind">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <h2> 订单列表 </h2>
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>生成订单</th>
+              <th>订购者</th>
+              <th>订单状态</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @orders.each do |order| %>
+            <tr>
+              <td><%= link_to(order.id, admin_order_path(order)) %></td>
+              <td><%= order.created_at.to_s(:long) %></td>
+              <td><%= order.user.email %></td>
+              <td><%= order.aasm_state %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-</div>
+</body>

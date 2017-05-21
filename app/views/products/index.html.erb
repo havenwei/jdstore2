@@ -36,7 +36,7 @@ text-decoration: none;
 
 
 .pdt-index {
-    background: linear-gradient( rgba(36,65,75,0.3), rgba(36,65,75,0.3) ), url(""); //在背景图片上做渐变效果 线性渐变 颜色号 图片地址
+    background: linear-gradient(10deg, #82939e,#f7f0dc ), url(""); //在背景图片上做渐变效果 线性渐变 颜色号 图片地址
     display: block;
     background-attachment: fixed; //fixed使得背景图片缩放比例适中；如果使用auto就会放大到只看到图片的一个部分
     background-repeat: no-repeat; //背景图片不重复放置
@@ -50,7 +50,7 @@ text-decoration: none;
     margin-right: auto; //修改后无变化
     margin-bottom: 0; //修改后无变化
     border-radius: 0; //修改后无变化
-    min-height: 2880px; //背景图片的高度设置!!!!
+    min-height: 288px; //背景图片的高度设置!!!!
     position: relative;
     color: white; //box中，所有字体的颜色（除了 按钮字体色）
 }
@@ -158,9 +158,9 @@ text-decoration: none;
 </div>
 
 <div class="nav-text">
-  <%= link_to account_orders_path, :class => "nav-text"  do  %>
+  <%= link_to root_path, :class => "nav-text"  do  %>
     <div class="nav-inside">
-      我的订单 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+      返回首页 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
     </div>
   <% end %>
