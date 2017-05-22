@@ -1,4 +1,4 @@
-<div class="row">
+
   <div class="col-md-6">
     <% if @fitting.image.present? %>
       <%= image_tag(@fitting.image.medium.url, class: "thumbnail") %>
@@ -16,7 +16,6 @@
     <div> 数量 : <%= @fitting.quantity %> </div>
     <div class="fitting-price"> ￥ <%= @fitting.price %> </div>
     <div class="pull-right">
-      <%= link_to("加入购物车", "#", :class => "btn btn-danger btn-lg") %>
+      <%= link_to("加入定制面板", "#", :class => "btn btn-success btn-lg") %>
     </div>
   </div>
-</div>

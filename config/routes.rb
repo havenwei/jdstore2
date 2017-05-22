@@ -50,7 +50,11 @@ Rails.application.routes.draw do
     resources :orders
   end
 
-  resources :fittings
+  resources :fittings do
+    member do
+      post :add_to_custom_board
+    end
+  end
 
   namespace :admin do
     resources :fittings
