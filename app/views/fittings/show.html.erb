@@ -16,6 +16,6 @@
     <div> 数量 : <%= @fitting.quantity %> </div>
     <div class="fitting-price"> ￥ <%= @fitting.price %> </div>
     <div class="pull-right">
-      <%= link_to("加入定制面板", "#", :class => "btn btn-success btn-lg") %>
+      <%= link_to("加入定制面板", add_to_custom_board_fitting_path(@fitting), method: :post, :class => "btn btn-success btn-lg") %>
     </div>
   </div>

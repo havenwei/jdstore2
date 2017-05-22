@@ -31,11 +31,11 @@ ActiveRecord::Schema.define(version: 20170522030050) do
   end
 
   create_table "custom_items", force: :cascade do |t|
-    t.integer  "custom_boards_id"
+    t.integer  "custom_board_id"
     t.integer  "fitting_id"
-    t.integer  "size",             default: 1
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.integer  "size",            default: 1
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "fittings", force: :cascade do |t|
