@@ -2,18 +2,18 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">JDstore</a>
+            <a class="navbar-brand" href="/">晨光布艺</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li>
-              <%= link_to("Products", products_path) %>
+              <%= link_to("窗帘展示", products_path) %>
             </li>
-            <li>
+            <!-- <li>
               <%= link_to("Fittings", fittings_path) %>
-            </li>
+            </li> -->
           </ul>
           <ul class="nav navbar-nav navbar-right">
               <li>
@@ -33,7 +33,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <% if current_user.admin? %>
-                          <li><%= link_to("Admin Dashboard", admin_products_path) %></li>
+                          <li><%= link_to("管理员面板", admin_products_path) %></li>
                         <% end %>
                         <li><%= link_to("个人订单列表",account_orders_path) %></li>
                         <li class="divider"></li>

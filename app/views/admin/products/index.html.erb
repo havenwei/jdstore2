@@ -1,53 +1,79 @@
-<h2> Product List </h2>
+<style media="screen">
+.pdt-ind {
+    background: linear-gradient(350deg, #82939e,#f7f0dc ), url(""); //在背景图片上做渐变效果 线性渐变 颜色号 图片地址
+    display: block;
+    background-attachment: fixed; //fixed使得背景图片缩放比例适中；如果使用auto就会放大到只看到图片的一个部分
+    background-repeat: no-repeat; //背景图片不重复放置
+    background-position: center top; //使得背景图片在页面中 置中、置顶
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; //cover使得背景图片在页面中铺满
+    border-style: none;
+    margin-left: auto; //修改后无变化
+    margin-right: auto; //修改后无变化
+    margin-bottom: 0; //修改后无变化
+    border-radius: 0; //修改后无变化
+    min-height: 2880px; //背景图片的高度设置!!!!
+    position: relative;
+}
+</style>
 
-<%= link_to("Add new product", new_admin_product_path, class: "btn btn-default pull-right") %>
+<body class="pdt-ind">
 
-<br /><br />
+  <h2> Product List </h2>
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th> # </th>
-      <th> 品名 </th>
-      <th> 描述 </th>
-      <th> 库存 </th>
-      <th> 价格 </th>
-      <th> 选项 </th>
-      <th> 创建日期 </th>
-    </tr>
-  </thead>
+  <%= link_to("Add new product", new_admin_product_path, class: "btn btn-default pull-right") %>
 
-  <tbody>
-    <% @products.each do |product| %>
-    <tr>
-      <td>
-        <%= link_to product_path(product) do %>
-          <% if product.image.present? %>
-            <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
-          <% else %>
-            <%= image_tag(url_to_image('NoPic'),class: "thumbnail") %>
+  <br /><br />
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th> # </th>
+        <th> 品名 </th>
+        <th> 描述 </th>
+        <th> 库存 </th>
+        <th> 价格 </th>
+        <th> 选项 </th>
+        <th> 创建日期 </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @products.each do |product| %>
+      <tr>
+        <td>
+          <%= link_to product_path(product) do %>
+            <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag(url_to_image('NoPic'),class: "thumbnail") %>
+            <% end %>
           <% end %>
-        <% end %>
-      </td>
-      <td><%= link_to(product.title, admin_product_path(product)) %></td>
-      <td><%= product.description %></td>
-      <td><%= product.quantity %></td>
-      <td><%= product.price %></td>
-      <td>
-        <%= link_to("Edit", edit_admin_product_path(product)) %>
-        |
-        <%= link_to("Destory", admin_product_path(product), method: :delete, data: {confirm: "Are you sure?"}) %>
-        <br />
-        <%= link_to("向上", move_up_admin_product_path(product), method: :patch) %>
-        ｜
-        <%= link_to("向下", move_down_admin_product_path(product), method: :patch) %>
-        <br />
-        <%= link_to("置顶", move_top_admin_product_path(product), method: :patch) %>
-        |
-        <%= link_to("置底", move_bottom_admin_product_path(product), method: :patch) %>
-      </td>
-      <td><%= product.created_at %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+        </td>
+        <td><%= link_to(product.title, admin_product_path(product)) %></td>
+        <td><%= product.description %></td>
+        <td><%= product.quantity %></td>
+        <td><%= product.price %></td>
+        <td>
+          <%= link_to("Edit", edit_admin_product_path(product)) %>
+          |
+          <%= link_to("Destory", admin_product_path(product), method: :delete, data: {confirm: "Are you sure?"}) %>
+          <br />
+          <%= link_to("向上", move_up_admin_product_path(product), method: :patch) %>
+          ｜
+          <%= link_to("向下", move_down_admin_product_path(product), method: :patch) %>
+          <br />
+          <%= link_to("置顶", move_top_admin_product_path(product), method: :patch) %>
+          |
+          <%= link_to("置底", move_bottom_admin_product_path(product), method: :patch) %>
+        </td>
+        <td><%= product.created_at %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+</body>
