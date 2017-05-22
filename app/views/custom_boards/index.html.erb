@@ -1,0 +1,51 @@
+    <h2> 定制面板 </h2>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">商品资讯</th>
+          <th>单价</th>
+          <th>尺寸</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% current_custom.custom_items.each do |custom_item| %>
+          <tr>
+            <td>
+              <%= link_to fitting_path(custom_item.fitting) do %>
+                <% if custom_item.fitting.image.present? %>
+                  <%= image_tag(custom_item.fitting.image.thumb.url, class: "thumbnail") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                <% end %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to(custom_item.fitting.title, fitting_path(custom_item.fitting)) %>
+            </td>
+            <td>
+              <%= custom_item.fitting.price %>
+            </td>
+            <td>
+              <%= custom_item.size %>
+            </td>
+          </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+
+    <br>
+
+    <div class="total clearfix">
+      <span class="pull-right">
+         <span> 总计 xxx RMB  </span>
+      </span>
+    </div>
+
+    <hr>
+
+    <div class="checkout clearfix">
+      <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-danger pull-right") %>
+    </div>

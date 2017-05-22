@@ -1,0 +1,2 @@
+class CustomBoardsController < ApplicationController
+end
