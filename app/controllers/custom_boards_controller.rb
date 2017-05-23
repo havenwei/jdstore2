@@ -4,4 +4,8 @@ class CustomBoardsController < ApplicationController
     flash[:warning] = "已清空购物车"
     redirect_to custom_boards_path
   end
+
+  def generate
+    @design = Design.new
+  end
 end
