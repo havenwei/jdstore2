@@ -62,6 +62,7 @@ Rails.application.routes.draw do
   resources :custom_boards do
     collection do
       delete :clean
+      post   :generate
     end
   end
 
