@@ -1,0 +1,29 @@
+<div class="col-md-12">
+<h2> 窗帘设计方案 </h2>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>生成时间</th>
+      <th>操作选项</th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @designs.each do |design| %>
+    <tr>
+      <td> <%= link_to(design.id, account_design_path(design)) %> </td>
+      <td> <%= design.created_at.to_s(:long) %> </td>
+      <td>
+        <%= link_to account_design_path(design), method: :delete, data: {confirm: "你确定要删除该方案吗？"} do %>
+          <i class="fa fa-trash"></i>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
+</div>

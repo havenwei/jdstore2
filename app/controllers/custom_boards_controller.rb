@@ -5,7 +5,4 @@ class CustomBoardsController < ApplicationController
     redirect_to custom_boards_path
   end
 
-  def generate
-    @design = Design.new
-  end
 end

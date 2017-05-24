@@ -51,6 +51,7 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :orders
+    resources :designs
   end
 
   resources :fittings do
@@ -62,10 +63,10 @@ Rails.application.routes.draw do
   resources :custom_boards do
     collection do
       delete :clean
-      post   :generate
     end
   end
 
   resources :custom_items
+  resources :designs
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
