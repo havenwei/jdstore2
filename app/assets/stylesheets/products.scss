@@ -1,3 +1,192 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//----产品页面图片排版开始-----
+.content-2 {
+  padding: 60px 0 120px;
+  background: linear-gradient(10deg, #82939e,#f7f0dc ), url(""); //在背景图片上做渐变效果 线性渐变 颜色号 图片地址
+
+  .feature {
+    margin-top: 30px;
+    p {
+      margin-top: 30px;
+    }
+  }
+
+  .container {
+    margin-top: 80px;
+  }
+
+  .person {
+    text-align: center;
+  }
+
+  .avatar {
+    width: 300px; //宽度值
+    height: 300px; //高度值
+    border-radius: 10%; //圆角度数
+    box-shadow: 6px 10px 20px rgba(0,0,0,0.6); //影子 ：向右偏置 向下偏置 虚化加强 （0,0,0,透明度）
+  }
+
+  .name {
+    margin-top: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    color: #757575;
+  }
+
+  .words{
+    margin-top: 15px;//--方格的上边距
+    width: 90%;
+    height: auto;
+    color: #9E9E9E;
+    letter-spacing: 0.1em;//--自间距
+    padding: 20px 40px;//---框框与文本的 上下距离、左右距离
+    border-width: 10px;//---不知道
+    border-radius: 5px;//---圆角度数
+    background-color: #F5F5F5;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+
+    .quote-left {
+      color: #9E9E9E;
+      margin-right: 100%;
+    }
+
+    .quote-right {
+      color: #9E9E9E;
+      margin-left: 100%;
+    }
+  }
+
+}
+//----产品页面图片排版结束-----
+
+
+  .products-evey{
+  margin-top: 30px;
+margin-left: 40px;/*-- --*/
+text-decoration: none;
+  }
+  .productstitle{
+    margin-left: 40px;
+    margin-bottom: 20px;
+  }
+  .productimage{
+    margin-bottom: 30px;
+  }
+  .productimage:hover{
+  }
+  .boxcenter{
+    margin: 0 auto;
+  }
+  #panel, #flip {
+    padding: 5px;
+    text-align: center;
+    //background-color: #d8d6d6;
+    background-color: grey;
+    border: solid 1px #c3c3c3;
+    color:white;
+}
+#panel {
+    padding: 30px;
+    display: none;
+}
+
+
+.pdt-index {
+    background: linear-gradient(10deg, #82939e,#f7f0dc ), url(""); //在背景图片上做渐变效果 线性渐变 颜色号 图片地址
+    display: block;
+    background-attachment: fixed; //fixed使得背景图片缩放比例适中；如果使用auto就会放大到只看到图片的一个部分
+    background-repeat: no-repeat; //背景图片不重复放置
+    background-position: center top; //使得背景图片在页面中 置中、置顶
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; //cover使得背景图片在页面中铺满
+    border-style: none;
+    margin-left: auto; //修改后无变化
+    margin-right: auto; //修改后无变化
+    margin-bottom: 0; //修改后无变化
+    border-radius: 0; //修改后无变化
+    min-height: 288px; //背景图片的高度设置!!!!
+    position: relative;
+    color: white; //box中，所有字体的颜色（除了 按钮字体色）
+}
+
+
+
+.titlebox{
+  color:grey;
+  height:90px;
+  width:210px;
+  background-color:white ;
+  line-height: 50px;
+  clear: both;
+  margin-bottom: 50px;
+  text-align: center;
+  border-radius: 3px;
+}
+.titlebox:hover{
+  background-color:rgba(255,255,255,0.8);
+}
+.productstitle{
+  color: #edeeec;
+  text-align:left;
+  font-size: 30px;
+}
+.smallcircle{
+  width:50px;
+  height:50px;
+  background-color: #c5c5c5;
+  border-radius: 25px;
+  border:2px solid grey;
+  margin-bottom: 10px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 25px;
+  font-weight: bold;
+  position: relative;
+}
+.smallcircle:hover{
+  background-color: orange;
+  border: 2px solid white;
+  color:white;
+}
+.qbbb-text{
+  font-size:12px;
+  color: white;
+  position: relative;
+  left:20px;
+  top:-4px;
+}
+.nav-left{
+  height: 1900px;
+  //background-color: yellow;
+}
+.nav-inside{
+  width:90%;
+  height:50px;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 3px;
+  margin-bottom: 5px;
+  color: white;
+  line-height: 50px;
+  text-align: center;
+}
+.nav-inside:hover{
+  background-color: orange;
+  border:1px solid white;
+  text-decoration: none;
+}
+.nav-text{
+   color:white;
+   text-decoration: none;
+}
+.nav-text:hover{
+  color:white;
+  text-decoration: none;
+}
