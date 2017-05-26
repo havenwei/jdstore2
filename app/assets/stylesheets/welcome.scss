@@ -3,8 +3,34 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+//----平面设计的任何要素，都能拆解到这三个上
+//1、颜色
+//.backgroud-color #背景颜色
+//.backgroud-image #背景图片
+//.color #字体颜色
+//.border-color #边框颜色
+//.box-shadow #边框阴影
+//.opacity #透明度
 
+//2、几何
+//.height #高度
+//.max-width #最大宽度
+//.min-width #最小宽度
+//.font-family #字体
+//.font-size #字体大小
+//.font-weight #字体粗细
+//.border-radius #边角弧度
 
+//3、位置
+//.float #浮动位置
+//.text-align #文本居左、居中、居右
+//.position #权限高于top,bottom,left,right的位置属性
+//.margin #外边距
+//.padding #内边距
+//.line-height #行高
+//.letter-spacing #字间距
+
+//---背景---
 .hero {
     background: linear-gradient( rgba(36,65,75,0.4), rgba(36,65,75,0.9) ), url("http://pic1.win4000.com/wallpaper/6/53be06a4e49a7.jpg"); //在背景图片上做渐变效果 线性渐变 颜色号 图片地址 http://pic1.win4000.com/wallpaper/6/53be06a4e49a7.jpg
     display: block;
