@@ -32,7 +32,7 @@
    background-color: #fff9e0;
    font-family: Arail, sansserif;
    font-size: 10px;
-   font-color: white;
+   font-color: #fff9e0;
    text-align: center; //让所以文本居中放置
  }
 
@@ -92,61 +92,6 @@
  }
  //------nav部分结束(首页)--------
 
-
-//------nav2部分开始(products页面)--------
-#nav2_war {
-  margin: 0px;
-  border: 0px;
-  width: 1000px;//正文内容居中占俱页面的位置
-  margin-left: auto;
-  margin-right: auto;
-}
-#nav2_war h1 {
-  width: 100%;
-  height: 200px;
-  line-height: 10px;
-  background: url("https://ww1.sinaimg.cn/large/006tNbRwgy1fg1etwqm7qj31kw0eeu0y.jpg") no-repeat;
-  background-size: cover;
-}
-#nav2_war h1 a {
-  text-decoration: none;
-  color: white;
-  display: block;
-  background-color: red;
-}
-#nav2_war ul {
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px;
-  overflow: hidden;
-}
-#nav2_war ul li a {
-  text-decoration: none;
-  color: #71604c;
-  display: block;
-  padding: 2px;//nav文本向下移动的数据
-}
-#nav2_war ul li {
-  float: left;
-  width: 190px;
-  height: 45px;
-  background-color: #fff9e0;
-  font-size: 20px;
-  line-height: 40px;
-  text-align: center;
-  opacity: .8;
-  border: 2px solid #fff9e0;//设置边框样式
-}
-#nav2_war ul li a:hover {
-  background-color: #f9b607;
-}
-#nav2_war ul li ul li {
-  display: none;
-}
-#nav2_war ul li:hover ul li {
-  display: block;
-}
-//------nav2部分结束(products页面)--------
 
  //------大图box开始---------
  #main-content {
@@ -275,3 +220,101 @@
  }
 
  //------footer结束-------
+
+
+
+ //------nav2部分开始(products页面)--------
+ #nav2_war {
+   margin: 0px;
+   border: 0px;
+   width: 1000px;//正文内容居中占俱页面的位置
+   margin-left: auto;
+   margin-right: auto;
+ }
+ #nav2_war h1 {
+   width: 100%;
+   height: 200px;
+   line-height: 10px;
+   background: url("https://ww1.sinaimg.cn/large/006tNbRwgy1fg1etwqm7qj31kw0eeu0y.jpg") no-repeat;
+   background-size: cover;
+ }
+ #nav2_war h1 a {
+   text-decoration: none;
+   color: white;
+   display: block;
+   background-color: red;
+ }
+ #nav2_war ul {
+   list-style-type: none;
+   margin: 0px;
+   padding: 0px;
+   overflow: hidden;
+ }
+ #nav2_war ul li a {
+   text-decoration: none;
+   color: #71604c;
+   display: block;
+   padding: 2px;//nav文本向下移动的数据
+ }
+ #nav2_war ul li {
+   float: left;
+   width: 190px;
+   height: 45px;
+   background-color: #fff9e0;
+   font-size: 20px;
+   line-height: 40px;
+   text-align: center;
+   opacity: .8;
+   border: 2px solid #fff9e0;//设置边框样式
+ }
+ #nav2_war ul li a:hover {
+   background-color: #a2c783;
+ }
+ #nav2_war ul li ul li {
+   display: none;
+ }
+ #nav2_war ul li:hover ul li {
+   display: block;
+ }
+ //------nav2部分结束(products页面)--------
+
+
+//--------products页面产品列表开始---------
+#products {
+  width: 70%;
+  height: 1500px;
+  background: #fff9e0;
+  margin-left: 180px;
+}
+#products1 {
+  width: 250px;
+  height: 400px;
+  display: inline;
+  float: left;
+  margin-top: 25px;
+  text-align: center;
+  margin-left: 30px;
+  background-color: #fff9e0;
+  border-radius: 8px;//背景的圆角度数
+}
+#products1:hover {
+box-shadow: 1px 5px 10px 6px rgba(158, 143, 111, 0.73);//透明度与阴影颜色
+transition: all ease-in-out 0.45s;//延迟0.45s出现的响应式按钮阴影
+}
+#products1 img {
+  width: 250px;
+  height: 250px;
+  border-radius: 8px;//背景的圆角度数
+}
+#products1 img:hover {
+box-shadow: 1px 5px 10px 6px rgba(158, 143, 111, 0.73);//透明度与阴影颜色
+transition: all ease-in-out 0.45s;//延迟0.45s出现的响应式按钮阴影
+}
+#products1 h3 {
+  color: #71604c;
+
+}
+#products1 p {
+  color: #71604c;
+}
+//--------products页面产品列表结束---------
