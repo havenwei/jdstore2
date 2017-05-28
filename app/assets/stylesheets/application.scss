@@ -18,11 +18,103 @@
 @import "bootstrap";
 @import "font-awesome";
 
+
+// footer置底代码
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 140px;
+  background-color: #deeff5;
+}
+
+// 内容区
+.my-content {
+  margin: 101px 30px 0;
+  padding-bottom: 60px;
+}
+// 内容区带悬浮效果
+.my-content-raised {
+  margin: 101px 30px 0;
+  padding-bottom: 60px;
+  border-radius: 6px;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .navbar-brand img {
+  height: 30px;
+  display: inline-block;
+}
+
+.navbar .navbar-nav > li > a {
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+
+//---------Footer---------
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 100px;
+  font-size: 0.9em;
+  color: #8f8f8f;
+  letter-spacing: 5px;
+  background-color: #F8F8F8;
+
+  a {
+    color: #6499d0;
+  }
+
+  a:focus,
+  a:hover {
+    text-decoration: none;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-align: center;
+    color: #4a81ba;
+  }
+
+  .footer_icon li {
+    color: #6499d0;
+    display: inline;
+    margin-left: 0.8em;//图标的左间距
+    margin-right: 0.8em;//图标的右间距
+
+    .btn-weixin {
+      background-color: #333;
+    }
+
+    .btn-weibo {
+      background-color: #CD201F;
+    }
+
+    .btn-facebook {
+      background-color: #3b5998;
+    }
+
+    .btn-linkedin {
+      background-color: #0976b4;
+    }
+  }
+}
+
 /*----------nav----------*/
 .navbar {
   margin: 0;
 }
 
+//-----background--------/
 .pdt-inding {
     background: linear-gradient(10deg, #82939e,#f7f0dc ), url(""); //在背景图片上做渐变效果 线性渐变 颜色号 图片地址
     display: block;
@@ -66,3 +158,29 @@
     width: 100px;
     height:200px;
   }
+
+//----table测试---
+.like-table{
+     display:table-cell;
+ }
+ td,
+ .like-table{
+     width:550px;
+     height:200px;
+     border:10px solid #000;
+     vertical-align: middle;//實現垂直置中
+ }
+ td div,
+ .like-table div{
+     width:100px;
+     height:50px;
+     margin:0 auto;
+     color:#fff;
+     font-size:12px;
+     line-height: 50px;
+     text-align: center;
+     background:#c00;
+ }
+ .like-table div{
+     background:#069;
+ }
