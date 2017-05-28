@@ -19,168 +19,259 @@
 @import "font-awesome";
 
 
-// footer置底代码
-html {
-  height: 100%;
-  box-sizing: border-box;
-}
 
-*,
-*:after,
-*:before {
-  box-sizing: inherit;
-}
+ //-----正文部分开始------
+ * {
+   margin: 0px;
+   padding: 0px;
+ }
+ body {
+   margin: 0px;
+   border: 0px;
+   padding-top: 0px;
+   background-color: #fff9e0;
+   font-family: Arail, sansserif;
+   font-size: 10px;
+   font-color: white;
+   text-align: center; //让所以文本居中放置
+ }
 
-body {
-  margin: 0;
-  position: relative;
-  min-height: 100%;
-  padding-bottom: 140px;
-  background-color: #deeff5;
-}
+ //------nav部分开始(首页)--------
+ #nav_war {
+   margin: 0px;
+   border: 0px;
+   width: 1000px;//正文内容居中占俱页面的位置
+   margin-left: auto;
+   margin-right: auto;
+ }
+ #nav_war h1 {
+   width: 100%;
+   height: 70px;
+   line-height: 70px;
+   background-color: #f18702;
+   font-size: 30px;
+   color: white;
+ }
+ #nav_war h1 a {
+   text-decoration: none;
+   color: white;
+   display: block;
+   padding: 2px;//nav文本向下移动的数据
+ }
+ #nav_war ul {
+   list-style-type: none;
+   margin: 0px;
+   padding: 0px;
+   overflow: hidden;
+ }
+ #nav_war ul li a {
+   text-decoration: none;
+   color: #71604c;
+   display: block;
+   padding: 2px;//nav文本向下移动的数据
+ }
+ #nav_war ul li {
+   float: left;
+   width: 190px;
+   height: 45px;
+   background-color: #fff9e0;
+   font-size: 20px;
+   line-height: 40px;
+   text-align: center;
+   opacity: .8;
+   border: 2px solid #fff9e0;//设置边框样式
+ }
+ #nav_war ul li a:hover {
+   background-color: #f9b607;
+ }
+ #nav_war ul li ul li {
+   display: none;
+ }
+ #nav_war ul li:hover ul li {
+   display: block;
+ }
+ //------nav部分结束(首页)--------
 
-// 内容区
-.my-content {
-  margin: 101px 30px 0;
-  padding-bottom: 60px;
-}
-// 内容区带悬浮效果
-.my-content-raised {
-  margin: 101px 30px 0;
-  padding-bottom: 60px;
-  border-radius: 6px;
-  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
-}
 
-.navbar .navbar-brand img {
-  height: 30px;
-  display: inline-block;
+//------nav2部分开始(products页面)--------
+#nav2_war {
+  margin: 0px;
+  border: 0px;
+  width: 1000px;//正文内容居中占俱页面的位置
+  margin-left: auto;
+  margin-right: auto;
 }
-
-.navbar .navbar-nav > li > a {
-  font-size: 1em;
-  letter-spacing: 1px;
-}
-
-//---------Footer---------
-footer {
-  position: absolute;
+#nav2_war h1 {
   width: 100%;
-  bottom: 0;
-  height: 100px;
-  font-size: 0.9em;
-  color: #8f8f8f;
-  letter-spacing: 5px;
-  background-color: #F8F8F8;
-
-  a {
-    color: #6499d0;
-  }
-
-  a:focus,
-  a:hover {
-    text-decoration: none;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-    text-align: center;
-    color: #4a81ba;
-  }
-
-  .footer_icon li {
-    color: #6499d0;
-    display: inline;
-    margin-left: 0.8em;//图标的左间距
-    margin-right: 0.8em;//图标的右间距
-
-    .btn-weixin {
-      background-color: #333;
-    }
-
-    .btn-weibo {
-      background-color: #CD201F;
-    }
-
-    .btn-facebook {
-      background-color: #3b5998;
-    }
-
-    .btn-linkedin {
-      background-color: #0976b4;
-    }
-  }
+  height: 200px;
+  line-height: 10px;
+  background: url("https://ww1.sinaimg.cn/large/006tNbRwgy1fg1etwqm7qj31kw0eeu0y.jpg") no-repeat;
+  background-size: cover;
 }
-
-/*----------nav----------*/
-.navbar {
-  margin: 0;
+#nav2_war h1 a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  background-color: red;
 }
-
-//-----background--------/
-.pdt-inding {
-    background: linear-gradient(10deg, #82939e,#f7f0dc ), url(""); //在背景图片上做渐变效果 线性渐变 颜色号 图片地址
-    display: block;
-    background-attachment: fixed; //fixed使得背景图片缩放比例适中；如果使用auto就会放大到只看到图片的一个部分
-    background-repeat: no-repeat; //背景图片不重复放置
-    background-position: center top; //使得背景图片在页面中 置中、置顶
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; //cover使得背景图片在页面中铺满
-    border-style: none;
-    margin-left: auto; //修改后无变化
-    margin-right: auto; //修改后无变化
-    margin-bottom: 0; //修改后无变化
-    border-radius: 0; //修改后无变化
-    min-height: 288px; //背景图片的高度设置!!!!
-    position: relative;
+#nav2_war ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
 }
-  .productsshow-evey{
-    padding-left: 40px;
-    padding-right: 40px;
-    width: 100%;
-    background-color: grey;
-    //background-image: url("https://static.pexels.com/photos/4827/nature-forest-trees-fog.jpeg");
-    background-size: cover;
-    background-repeat: repeat-y;
-  }
-  .pdc-description{
-    //background-color: rgba(0, 0, 0, 0.3);
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-      padding-top: 30px;
-  }
-  .reviewbox{
-    //background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 1px 1px 1px grey;
-    padding-bottom: 30px;
-  }
-  .heart-e{
-    width: 100px;
-    height:200px;
-  }
+#nav2_war ul li a {
+  text-decoration: none;
+  color: #71604c;
+  display: block;
+  padding: 2px;//nav文本向下移动的数据
+}
+#nav2_war ul li {
+  float: left;
+  width: 190px;
+  height: 45px;
+  background-color: #fff9e0;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+  opacity: .8;
+  border: 2px solid #fff9e0;//设置边框样式
+}
+#nav2_war ul li a:hover {
+  background-color: #f9b607;
+}
+#nav2_war ul li ul li {
+  display: none;
+}
+#nav2_war ul li:hover ul li {
+  display: block;
+}
+//------nav2部分结束(products页面)--------
 
-//----table测试---
-.like-table{
-     display:table-cell;
+ //------大图box开始---------
+ #main-content {
+   width: 100%;
+   height: 500px;//背景图片的高度
+   background: url("https://static.pexels.com/photos/160174/pexels-photo-160174.jpeg") no-repeat;
+   background-size: cover;
+   font-size: 20px;
+   color: #71604c;
+   line-height: 60px;
  }
- td,
- .like-table{
-     width:550px;
-     height:200px;
-     border:10px solid #000;
-     vertical-align: middle;//實現垂直置中
+ #main-content h1 {
+   font-size: 30px;
  }
- td div,
- .like-table div{
-     width:100px;
-     height:50px;
-     margin:0 auto;
-     color:#fff;
-     font-size:12px;
-     line-height: 50px;
-     text-align: center;
-     background:#c00;
+ #service {
+   background: rgba(191, 122, 5, 0.76);;
+   width: 250px;
+   height: 60px;
+   line-height: 60px;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 5px;
+   color: #71604c;
+   font-weight: 100;
+
+
  }
- .like-table div{
-     background:#069;
+ #service:hover {
+   box-shadow: 1px 5px 10px 6px rgba(123, 96, 10, 0.81);//透明度与阴影颜色
+   transition: all ease-in-out 0.45s;//延迟0.45s出现的响应式按钮阴影
  }
+ #service a {
+   color: white;
+   text-decoration: none;
+   padding: 25px;
+ }
+ //------大图box结束------
+
+ //------正文box1开始-----
+ #third {
+   height: 900px;
+   width: 690px;//正文内容居中占俱页面的位置
+   background: #fff2bd;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: -30px;
+   margin-bottom: 30px;
+   border-radius: 8px;//背景的圆角度数
+ }
+ #third:hover {
+   box-shadow: 1px 5px 10px 6px rgba(222, 196, 131, 0.81);//透明度与阴影颜色
+ }
+ #third1 {
+   width: 230px;
+   height: 400px;
+   padding-top: 20px;
+   display: inline;
+   float: left;
+   text-align: center;
+   border-radius: 8px;//背景的圆角度数
+ }
+ #third1 img {
+   width: 200px;
+   height: 200px;
+   border-radius: 8px;//背景的圆角度数
+ }
+ #third1:hover {
+   box-shadow: 1px 5px 10px 6px rgba(222, 196, 131, 0.81);//透明度与阴影颜色
+   transition: all ease-in-out 0.45s;//延迟0.45s出现的响应式按钮阴影
+ }
+ //------正文box1开始-----
+
+ //------footer开始-------
+ #footer {
+   width: 100%;
+   height: 200px;
+   background: rgba(185, 165, 132, 0.61);
+   line-height: 200px;//将文本向下移动
+ }
+ #footer h2 {
+   color: #71604c;
+   float: right;
+   margin-right: 300px;
+   font-size: 13px;
+   font-weight: 350;
+   line-height: 170px;//将文本向下移动
+ }
+ #footer2 ul {
+   float: left;
+   margin-left: 270px;
+ }
+ #footer2 ul li {
+   display: inline-block;
+   list-style-type: none;
+   font-size: 20px;
+ }
+ #footer2 ul li a {
+   text-decoration: none;
+   color: white;
+   padding: 15px;
+ }
+ #footer2 ul li:hover {
+   background: #ad9e80;
+ }
+ #icon {
+   font-size: 30px;
+ }
+ #icon2 {
+   font-size: 30px;
+ }
+ #icon3 {
+   font-size: 30px;
+ }
+ #icon:hover {
+   color: #4a4645;//添加隐藏的感应颜色
+   transition: all ease-in-out 0.40s;//添加隐藏色彩出现的延缓时间
+
+ }
+ #icon2:hover {
+   color: #e4cc8b;//添加隐藏的感应颜色
+   transition: all ease-in-out 0.40s;//添加隐藏色彩出现的延缓时间
+ }
+ #icon3:hover {
+   color: #79cab1;//添加隐藏的感应颜色
+   transition: all ease-in-out 0.40s;//添加隐藏色彩出现的延缓时间
+ }
+
+ //------footer结束-------

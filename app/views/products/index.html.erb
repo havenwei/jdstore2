@@ -1,45 +1,48 @@
-<!--产品内容开始-->
-<body class="pdt-inding container">
-  <div class="person col-md-12">
-    <div class="row content-2">
+<!--navbar内容开始-->
+<div id="nav2_war">
+      <h1><a href="/"></a></h1>
+      <ul>
+        <li><a href="#">询</a></li>
+        <li><a href="#">类</a>
+          <ul>
+            <li><a href="#">款式</a></li>
+            <li><a href="#">主帘</a></li>
+            <li><a href="#">罗马杆</a></li>
+            <li><a href="#">纱帘</a></li>
+            <li><a href="#">其他</a></li>
+          </ul>
+        </li>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">购</a>
+          <ul>
+            <li><a href="#">购物车</a></li>
+            <li><a href="#">继续购物</a></li>
+            <li><a href="#">我的订单</a></li>
+          </ul>
+        </li>
+        <li><a href="#">私</a>
+          <ul>
+            <li><a href="#">个人中心</a></li>
+            <li><a href="#">管理中心</a></li>
+            <li><a href="#">登出</a></li>
+          </ul>
+        </li>
+      </ul>
+</div>
+<!--navbar内容结束-->
 
-
-                <div class="products-evey ">
-
-                  <!--产品图片内容开始-->
-
-                  <% @products.each do |product| %>
-                  <div class="person col-xs-6 col-md-4">
-                    <%= link_to product_path(product) do %>
-                        <% if product.image.present? %>
-                          <%= image_tag(product.image.thumb.url, class: "avatar") %>
-                        <% else %>
-                          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "avatar") %>
-                        <% end %>
-                    <% end %>
-                    <!--产品图片内容结束-->
-
-                    <!--产品介绍内容开始-->
-                    <div class="name">
-                       <em>【<%= product.title %>】</em>
-                       <span class="" style="color:orange;font-weight:bold;">¥ <%= product.price %></span>
-                       <br><%= product.description %>
-                        <!--加入购物车开始-->
-                        <div style="float:left;position:absolute;top:260px;left:90px;">
-                          <%= link_to("", add_to_cart_product_path(product), :method => :post, :class => "btn btn-warning fa fa-shopping-cart") %>
-                        </div>
-                        <!--加入购物车结束-->
-                    </div>
-                  </div>
-                  <% end %>
-                </div>
-                <!--产品内容结束-->
-    </div>
+<!--footer内容开始-->
+<div id="footer">
+  <h2>Desin by qiaoyu & 魏文海</h2>
+  <div id="footer2">
+    <ul>
+      <li><a href="#"><i class="fa fa-github-alt" id="icon"></i></a></li>
+      <li><a href="#"><i class="fa fa-paw" id="icon2"></i></a></li>
+      <li><a href="#"><i class="fa fa-envira" id="icon3"></i></a></li>
+    </ul>
   </div>
-
-  <script src="http://www.w3schools.com/lib/w3data.js"></script>
-  <% yield :handwrite_javascript %>
-</body>
+</div>
+<!--footer内容结束-->
 
 
 
