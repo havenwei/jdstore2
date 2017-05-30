@@ -1,89 +1,64 @@
-<style media="screen">
-.pdt-ind {
-    background: linear-gradient(350deg, #82939e,#f7f0dc ), url(""); //在背景图片上做渐变效果 线性渐变 颜色号 图片地址
-    display: block;
-    background-attachment: fixed; //fixed使得背景图片缩放比例适中；如果使用auto就会放大到只看到图片的一个部分
-    background-repeat: no-repeat; //背景图片不重复放置
-    background-position: center top; //使得背景图片在页面中 置中、置顶
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; //cover使得背景图片在页面中铺满
-    border-style: none;
-    margin-left: auto; //修改后无变化
-    margin-right: auto; //修改后无变化
-    margin-bottom: 0; //修改后无变化
-    border-radius: 0; //修改后无变化
-    min-height: 2880px; //背景图片的高度设置!!!!
-    position: relative;
-}
-</style>
+<div class="col-md-12">
+  <h2>订单明细</h2>
 
-<body class="pdt-ind">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-    <h2>订单明细</h2>
-
-    <table class="table table-bordered">
-      <thead>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th width="80%">商品明细</th>
+        <th>单价</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @product_lists.each do |product_list| %>
         <tr>
-          <th width="80%">商品明细</th>
-          <th>单价</th>
+          <td><%= product_list.product_name %></td>
+          <td><%= product_list.product_price %></td>
         </tr>
-      </thead>
-      <tbody>
-        <% @product_lists.each do |product_list| %>
-          <tr>
-            <td><%= product_list.product_name %></td>
-            <td><%= product_list.product_price %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-
-    <div class="total clearfix">
-      <span class="pull-right">
-        总计 <%= @order.total %> CYN
-      </span>
-    </div>
-
-    <hr>
-
-    <h2> 寄送资讯 </h2>
-
-    <table class="table table-striped table-bordered">
-      <tbody>
-        <tr>
-          <td> 订购人 </td>
-        </tr>
-        <tr>
-          <td> <%= @order.billing_name %> - <%= @order.billing_address %> </td>
-        </tr>
-        <tr>
-          <td> 收件人 </td>
-        </tr>
-        <tr>
-          <td><%= @order.shipping_name %> - <%= @order.shipping_address %></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="pull-left">
-      <% if @order.order_placed? || @order.paid? %>
-        <%= link_to("申请取消订单", apply_to_cancel_order_path(@order), method: :post, class: "btn btn-info fa fa-shopping-cart") %>
       <% end %>
-    </div>
+    </tbody>
+  </table>
 
-    <% if !@order.is_paid? %>
-      <div class="group pull-right">
-        <%= link_to("以支付宝支付",pay_with_alipay_order_path(@order.token), method: :post, class: "btn btn-warning fa fa-shopping-cart pull-right") %>
-        <%= link_to("以微信支付",pay_with_wechat_order_path(@order.token), method: :post, class: "btn btn-warning fa fa-shopping-cart pull-right") %>
-      </div>
-    <% else %>
-      <p class="text-center"> 此订单已完成支付 </p>
+  <div class="total clearfix">
+    <span class="pull-right">
+      总计 <%= @order.total %> CYN
+    </span>
+  </div>
+
+  <hr>
+
+  <h2> 寄送资讯 </h2>
+
+  <table class="table table-striped table-bordered">
+    <tbody>
+      <tr>
+        <td> 订购人 </td>
+      </tr>
+      <tr>
+        <td> <%= @order.billing_name %> - <%= @order.billing_address %> </td>
+      </tr>
+      <tr>
+        <td> 收件人 </td>
+      </tr>
+      <tr>
+        <td><%= @order.shipping_name %> - <%= @order.shipping_address %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pull-left">
+    <% if @order.order_placed? || @order.paid? %>
+      <%= link_to("申请取消订单", apply_to_cancel_order_path(@order), method: :post, class: "btn btn-info fa fa-shopping-cart") %>
     <% end %>
   </div>
+
+  <% if !@order.is_paid? %>
+    <div class="group pull-right">
+      <%= link_to("以支付宝支付",pay_with_alipay_order_path(@order.token), method: :post, class: "btn btn-warning fa fa-shopping-cart pull-right") %>
+      <%= link_to("以微信支付",pay_with_wechat_order_path(@order.token), method: :post, class: "btn btn-warning fa fa-shopping-cart pull-right") %>
+    </div>
+  <% else %>
+    <p class="text-center"> 此订单已完成支付 </p>
+  <% end %>
+
+  <br><br><br>
 </div>
-</div>
-</body>
