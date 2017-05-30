@@ -1,50 +1,65 @@
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">晨光布艺</a>
-        </div>
+<!--navbar内容开始-->
+  <!--购物车与登录navbar开始-->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li>
-              <%= link_to("窗帘展示", products_path) %>
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to carts_path do %>
+            <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+          <% end %>
+        </li>
+        <li>
+          <% if !current_user %>
+            <li><%= link_to("注册", new_user_registration_path) %> </li>
+            <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+          <% else %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Hi!, <%= current_user.email %>
+                  <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                  <% if current_user.admin? %>
+                    <li><%= link_to("管理员面板", admin_products_path) %></li>
+                  <% end %>
+                  <li><%= link_to("个人订单列表",account_orders_path) %></li>
+                  <li class="divider"></li>
+                  <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+              </ul>
             </li>
-            <!-- <li>
-              <%= link_to("Fittings", fittings_path) %>
-            </li> -->
+          <% end %>
+        </li>
+    </ul>
+  </div>
+  <!--购物车与登录navbar结束-->
+<div id="nav_war">
+      <h1><a href="/">晨光布艺</a></h1>
+      <ul>
+        <li><a href="#">询</a></li>
+        <li><a href="#">类</a>
+          <ul>
+            <li><a href="#">款式</a></li>
+            <li><a href="#">主帘</a></li>
+            <li><a href="#">罗马杆</a></li>
+            <li><a href="#">纱帘</a></li>
+            <li><a href="#">其他</a></li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-              <li>
-                <%= link_to carts_path do %>
-                  购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
-                <% end %>
-              </li>
-              <li>
-                <% if !current_user %>
-                  <li><%= link_to("注册", new_user_registration_path) %> </li>
-                  <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
-                <% else %>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Hi!, <%= current_user.email %>
-                        <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <% if current_user.admin? %>
-                          <li><%= link_to("管理员面板", admin_products_path) %></li>
-                        <% end %>
-                        <li><%= link_to("个人订单列表",account_orders_path) %></li>
-                        <li class="divider"></li>
-                        <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
-                    </ul>
-                  </li>
-                <% end %>
-              </li>
+        </li>
+        <li><a href="/">首页</a></li>
+        <li><a href="#">购</a>
+          <ul>
+            <li><a href="#">购物车</a></li>
+            <li><a href="#">继续购物</a></li>
+            <li><a href="#">我的订单</a></li>
           </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-</nav>
+        </li>
+        <li><a href="#">私</a>
+          <ul>
+            <li><a href="#">个人中心</a></li>
+            <li><a href="#">管理中心</a></li>
+            <li><a href="#">登出</a></li>
+          </ul>
+        </li>
+      </ul>
+</div>
+<!--navbar内容结束-->
