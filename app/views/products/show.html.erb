@@ -1,56 +1,43 @@
 
 <body class="pdt-inding">
   <div class="productsshow-evey">
-
-
-    <div class="col-md-6" style="padding-top:30px;">
+    <!--左边产品图片开始-->
+    <div class="col-md-6" style="padding-top:60px; padding-left:190px;">
       <% if @product.image.present? %>
-
-
       <div id="zoom_01">
         <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
       </div>
-
-
       <% else %>
         <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
       <% end %>
     </div>
-
-    <div class="col-md-6 pdc-description">
+    <!--左边产品图片结束-->
+    <!--右边产品文字介绍开始-->
+    <div class="col-md-6 pdc-description" style="padding-top:90px; padding-right:150px;">
       <h2> <%= @product.title %> </h2>
-
       <div style="height:100px;">
-
         <p>
           <%= @product.description %>
         </p >
         <hr>
       </div>
-      <div> 数量 : <%= @product.quantity %> </div>
-    </br>
-
+      <div> 数量 : <%= @product.quantity %> </div><br>
       <div class="product-price"> ￥ <%= @product.price %> </div>
-
-  <!--加入购物车开始-->
-      <div class="pull-right" style="margin-top:10px;">
+      <!--加入购物车开始-->
+      <br><br><hr>
+      <div style="margin-top:10px;">
         <% if @product.quantity > 0 %>
-      <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-lg btn-warning fa fa-shopping-cart") %>
-     <% else %>
-      已销售一空
-     <% end %>
-
+          <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-lg btn-warning fa fa-shopping-cart") %>
+        <% else %>
+          已销售一空
+        <% end %>
       </div>
-
-  <!--加入购物车结束-->
-
+      <!--加入购物车结束-->
     </div>
-
+    <!--右边产品文字介绍开始-->
   </div>
 </div>
-
-
-
+<br><br>
 
 <script type="text/javascript">
   $('#zoom_01').elevateZoom();
