@@ -13,7 +13,7 @@
             <li><a href="#">其他</a></li>
           </ul>
         </li>
-        <li><a href="#">首页</a></li>
+        <li><a href="/">首页</a></li>
         <li><a href="#">购</a>
           <ul>
             <li><a href="#">购物车</a></li>
@@ -66,6 +66,27 @@
     <a href="#"><img src="https://ww4.sinaimg.cn/large/006tNbRwgy1fg1gzjpk2lj30nn0k278n.jpg"></a><br>
     <h3>静谧芳香</h3><br>
     <p>花香被静止，而我被包裹其中</p>
+  </div>
+</div>
+<!--产品列表内容结束-->
+
+<!--产品列表内容开始-->
+<div id="products">
+  <div id="products1">
+    <div id="product2" class="row">
+      <% @products.each do |product| %>
+        <div class="col-xs-6 col-md-3">
+          <%= link_to product_path(product) do %>
+            <% if product.image.present? %>
+              <%= image_tag(product.image.thumb.url) %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class:"thumbnail") %>
+            <% end %>
+          <% end %>
+          <%= product.title %> ￥ <%= product.price %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 <!--产品列表内容结束-->
