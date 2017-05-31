@@ -19,6 +19,7 @@ Rails.application.routes.draw do
         post :return
       end
     end
+
     resources :products do
       member do
         patch :move_up
@@ -27,6 +28,8 @@ Rails.application.routes.draw do
         patch :move_bottom
       end
     end
+
+    resources :fittings
   end
 
   resources :carts do
@@ -48,12 +51,22 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :orders
+    resources :designs
   end
 
-  resources :fittings
-
-  namespace :admin do
-    resources :fittings
+  resources :fittings do
+    member do
+      post :add_to_custom_board
+    end
   end
+
+  resources :custom_boards do
+    collection do
+      delete :clean
+    end
+  end
+
+  resources :custom_items
+  resources :designs
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
