@@ -142,14 +142,14 @@
    margin-top: -30px;
    margin-bottom: 30px;
    border-radius: 8px;//背景的圆角度数
-   box-shadow: 1px 5px 10px 6px rgba(222, 196, 131, 0.81);//透明度与阴影颜色
+   box-shadow: 1px 5px 10px 6px rgba(148, 138, 112, 0.81);//透明度与阴影颜色
  }
  #third:hover {
 
  }
  #third1 {
    width: 230px;
-   height: 400px;
+   height: 300px;
    padding-top: 20px;
    display: inline;
    float: left;
@@ -161,11 +161,153 @@
    height: 200px;
    border-radius: 8px;//背景的圆角度数
  }
+ #third1 h3 {
+   color: #71604c;
+ }
+ #third1 h3 p {
+   color: #71604c;
+ }
  #third1:hover {
-   box-shadow: 1px 5px 10px 6px rgba(222, 196, 131, 0.81);//透明度与阴影颜色
+   box-shadow: 1px 5px 10px 6px rgba(148, 138, 112, 0.81);//透明度与阴影颜色
    transition: all ease-in-out 0.45s;//延迟0.45s出现的响应式按钮阴影
  }
- //------正文box1开始-----
+ //------正文box1结束-----
+
+ //------正文box2开始-----
+ #third2 {
+   height: 323px;
+   width: 690px;//正文内容居中占俱页面的位置
+   background: #fbf9f0;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 20px;
+   margin-bottom: 30px;
+   border-radius: 8px;//背景的圆角度数
+   box-shadow: 1px 5px 10px 6px rgba(148, 138, 112, 0.81);//透明度与阴影颜色
+ }
+ #third2 h2 {
+   color: #71604c;
+   padding-top: 20px;
+   padding-bottom: 10px;
+ }
+ #third3 {
+   width: 230px;
+   height: 250px;
+   padding-bottom: 20px;
+   padding-left: 10px;
+   padding-right: 10px;
+   display: inline;
+   float: left;
+   text-align: center;
+   border-radius: 8px;//背景的圆角度数
+ }
+ #third3 h3 {
+   color: #71604c;
+ }
+ #third3 h3 p {
+   color: #71604c;
+ }
+ #third3 img {
+   width: 200px;
+   height: 150px;
+   border-radius: 8px;//背景的圆角度数
+ }
+ #third3:hover {
+   box-shadow: 1px 5px 10px 6px rgba(148, 138, 112, 0.81);//透明度与阴影颜色
+   transition: all ease-in-out 0.45s;//延迟0.45s出现的响应式按钮阴影
+ }
+ //------正文box2结束-----
+
+  //------正文box3开始-----
+  #third4 {
+    height: 323px;
+    width: 690px;//正文内容居中占俱页面的位置
+    background: #fbf9f0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;//背景的圆角度数
+    box-shadow: 1px 5px 10px 6px rgba(148, 138, 112, 0.81);//透明度与阴影颜色
+  }
+  #third4 h2 {
+    color: #71604c;
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+  #third5 {
+    width: 690px;
+    height: 220px;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline;
+    float: left;
+    text-align: center;
+    border-radius: 8px;//背景的圆角度数
+  }
+  #third5 h3 {
+    color: #71604c;
+  }
+  #third5 h3 p {
+    color: #71604c;
+  }
+  #third5 img {
+    width: 600px;
+    height: 80px;
+    border-radius: 8px;//背景的圆角度数
+  }
+  #third5:hover {
+    box-shadow: 1px 5px 10px 6px rgba(148, 138, 112, 0.81);//透明度与阴影颜色
+    transition: all ease-in-out 0.45s;//延迟0.45s出现的响应式按钮阴影
+  }
+  //------正文box3结束-----
+
+  //------正文box4开始-----
+  #third6 {
+    height: 412px;
+    width: 690px;//正文内容居中占俱页面的位置
+    background: #fbf9f0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;//背景的圆角度数
+    box-shadow: 1px 5px 10px 6px rgba(148, 138, 112, 0.81);//透明度与阴影颜色
+  }
+  #third6 h2 {
+    color: #71604c;
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+  #third7 img {
+    width: 600px;
+    height: 80px;
+    border-radius: 8px;//背景的圆角度数
+    margin-bottom: 20px;
+  }
+  #third8 {
+    width: 690px;
+    height: 80px;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline;
+    float: left;
+    text-align: center;
+    border-radius: 8px;//背景的圆角度数
+  }
+  #third8 h3 {
+    color: #71604c;
+  }
+  #third8 h3 p {
+    color: #71604c;
+  }
+  #third8:hover {
+    box-shadow: 1px 5px 10px 6px rgba(148, 138, 112, 0.81);//透明度与阴影颜色
+    transition: all ease-in-out 0.45s;//延迟0.45s出现的响应式按钮阴影
+  }
+  //------正文box4结束-----
 
  //------footer开始-------
  #footer {
@@ -194,7 +336,7 @@
  }
  #footer2 ul li a {
    text-decoration: none;
-   color: white;
+   color: #988e81;
    padding: 15px;
  }
  #footer2 ul li:hover {
@@ -239,7 +381,7 @@
    width: 100%;
    height: 200px;
    line-height: 10px;
-   background: url("https://ww1.sinaimg.cn/large/006tNbRwgy1fg1etwqm7qj31kw0eeu0y.jpg") no-repeat;
+   background: url("https://ww2.sinaimg.cn/large/006tNc79gy1fg4hrb4bubj315c0aydkx.jpg") no-repeat;
    background-size: cover;
  }
  #nav2_war h1 a {
