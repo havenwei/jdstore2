@@ -2,7 +2,8 @@
     <h2> 定制面板 </h2>
 
     <%= simple_form_for current_custom do |f| %>
-      <%= f.select :useto, ["客厅", "主卧", "次卧", "儿童房", "老人房", "书房", "其他"] %>
+      <%= f.input :useto, label: "用途",
+          collection:["客厅", "主卧", "次卧", "儿童房", "老人房", "书房", "其他"], include_blank: false%>
       <%= f.submit "更新", data: {disable_with: "Submitting..."} %>
     <% end %>
 
