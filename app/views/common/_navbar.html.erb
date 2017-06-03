@@ -3,11 +3,15 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
     <ul class="nav navbar-nav navbar-right">
-        <li>
+        <li><%= link_to("样式", fittings_path(category: '样式')) %></li>
+        <li><%= link_to("布料", fittings_path(category: '布料')) %></li>
+        <li><%= link_to("罗马杆", fittings_path(category: '罗马杆')) %></li>
+        <!-- <li><%= link_to("定制面板", custom_boards_path) %></li> -->
+        <!-- <li>
           <%= link_to carts_path do %>
             <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
           <% end %>
-        </li>
+        </li> -->
         <li>
           <% if !current_user %>
             <li><%= link_to("注册", new_user_registration_path) %> </li>
@@ -22,6 +26,7 @@
                   <% if current_user.admin? %>
                     <li><%= link_to("管理员面板", admin_products_path) %></li>
                   <% end %>
+                  <li><%= link_to("个人定制方案",account_designs_path) %></li>
                   <li><%= link_to("个人订单列表",account_orders_path) %></li>
                   <li class="divider"></li>
                   <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
@@ -36,7 +41,7 @@
       <h1><a href="/">晨光布艺</a></h1>
       <ul>
         <li><a href="#">惑</a></li>
-        <li><a href="/products">品</a>
+        <li><a href="/fittings">品</a>
           <ul>
             <li><a href="#">款式</a></li>
             <li><a href="#">主帘</a></li>
@@ -46,7 +51,7 @@
           </ul>
         </li>
         <li><a href="/">首页</a></li>
-        <li><a href="/carts">购</a>
+        <li><a href="/custom_boards">定</a>
           <ul>
             <li><a href="#">购物车</a></li>
             <li><a href="#">继续购物</a></li>

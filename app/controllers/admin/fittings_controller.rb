@@ -43,6 +43,6 @@ class Admin::FittingsController < ApplicationController
   private
 
   def fitting_params
-    params.require(:fitting).permit(:title, :pid, :price, :quantity, :image)
+    params.require(:fitting).permit(:title, :pid, :price, :quantity, :image, :category)
   end
 end

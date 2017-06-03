@@ -4,24 +4,39 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.user = current_user
-    @order.total = current_cart.total_price
+    # @order.total = current_cart.total_price
+
+    @order.total = 0
+    current_user.designs.each do |design|
+      @order.total += design.total_price
+    end
 
     if @order.save
 
-      current_cart.cart_items.each do |cart_item|
+      # current_cart.cart_items.each do |cart_item|
+      #   product_list = ProductList.new
+      #   product_list.order = @order
+      #   product_list.product_name = cart_item.product.title
+      #   product_list.product_price = cart_item.product.price
+      #   product_list.quantity = cart_item.quantity
+      #   product_list.save
+      # end
+      # current_cart.clean!
+
+      current_user.designs.each do |design|
         product_list = ProductList.new
         product_list.order = @order
-        product_list.product_name = cart_item.product.title
-        product_list.product_price = cart_item.product.price
-        product_list.quantity = cart_item.quantity
+        product_list.product_name = design.title
+        product_list.product_price = design.total_price
         product_list.save
       end
-      current_cart.clean!
+
       OrderMailer.notify_order_placed(@order).deliver!
 
       redirect_to order_path(@order.token)
     else
-      render 'carts/checkout'
+      # render 'carts/checkout'
+      render 'account/designs/checkout'
     end
   end
 

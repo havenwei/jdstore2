@@ -51,7 +51,11 @@ Rails.application.routes.draw do
 
   namespace :account do
     resources :orders
-    resources :designs
+    resources :designs do
+      collection do
+        post :checkout
+      end
+    end
   end
 
   resources :fittings do

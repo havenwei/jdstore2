@@ -8,6 +8,7 @@ class Account::DesignsController < ApplicationController
   def create
     @design = Design.new
     @design.user = current_user
+    @design.title = current_custom.useto
 
     if @design.save
       current_custom.custom_items.each do |custom_item|
@@ -33,6 +34,10 @@ class Account::DesignsController < ApplicationController
     @design.destroy
     flash[:alert] = "已删除该方案"
     redirect_to :back
+  end
+
+  def checkout
+    @order = Order.new
   end
 
 end

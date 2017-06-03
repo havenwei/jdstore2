@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170524025654) do
+ActiveRecord::Schema.define(version: 20170603155237) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -26,8 +26,11 @@ ActiveRecord::Schema.define(version: 20170524025654) do
   end
 
   create_table "custom_boards", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "useto"
+    t.integer  "window_height"
+    t.integer  "window_width"
   end
 
   create_table "custom_items", force: :cascade do |t|
@@ -53,6 +56,7 @@ ActiveRecord::Schema.define(version: 20170524025654) do
     t.integer  "window_width"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "title"
   end
 
   create_table "fittings", force: :cascade do |t|
@@ -63,6 +67,7 @@ ActiveRecord::Schema.define(version: 20170524025654) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "image"
+    t.string   "category"
   end
 
   create_table "orders", force: :cascade do |t|
