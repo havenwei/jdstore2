@@ -2,8 +2,10 @@
     <h2> 定制面板 </h2>
 
     <%= simple_form_for current_custom do |f| %>
+      <%= f.input :window_width %>
+      <%= f.input :window_height %>
       <%= f.input :useto, label: "用途",
-          collection:["客厅", "主卧", "次卧", "儿童房", "老人房", "书房", "其他"], include_blank: false%>
+          collection:["客厅", "主卧", "次卧", "儿童房", "老人房", "书房", "其他"], include_blank: '请选择'%>
       <%= f.submit "更新", data: {disable_with: "Submitting..."} %>
     <% end %>
 
@@ -16,10 +18,11 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>商品资讯</th>
+          <th>名称</th>
           <th>单价</th>
-          <th>尺寸</th>
-          <th>小计</th>
+          <th>尺寸（进一法）</th>
+          <th>计算公式</th>
+          <th>小计（四舍五入）</th>
           <th>操作选项</th>
         </tr>
       </thead>
@@ -47,6 +50,9 @@
                 <%= f.input :size  %>
                 <%= f.submit "更新", data: {disable_with: "Submitting..."} %>
               <% end %>
+            </td>
+            <td>
+              <%= render_custom_item_formula(custom_item) %>
             </td>
             <td>
               <%= render_custom_item_subtotal(custom_item) %> <!-- 部件价格小计 -->

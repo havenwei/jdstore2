@@ -5,7 +5,6 @@ class CustomBoard < ApplicationRecord
   def add_fitting_to_custom_board(fitting)
     ci = custom_items.build
     ci.fitting = fitting
-    ci.size = 1
     ci.save
   end
 

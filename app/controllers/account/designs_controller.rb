@@ -9,6 +9,8 @@ class Account::DesignsController < ApplicationController
     @design = Design.new
     @design.user = current_user
     @design.title = current_custom.useto
+    @design.window_width = current_custom.window_width
+    @design.window_height = current_custom.window_height
 
     if @design.save
       current_custom.custom_items.each do |custom_item|
@@ -20,7 +22,7 @@ class Account::DesignsController < ApplicationController
       end
       redirect_to account_design_path(@design)
     else
-      render 'custom_boards'
+      redirect_to custom_boards_path
     end
   end
 
