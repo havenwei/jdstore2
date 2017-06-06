@@ -16,12 +16,15 @@
 </head>
 
   <body>
-    <div class="container-fluid">
-      <div class="row">
-        <%= render "common/navbar" %>
-        <%= yield %>
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <%= render "common/navbar" %>
+          <%= yield %>
+        </div>
       </div>
     </div>
-    <%= render "common/footer" %>
-  </body>
+    <div style="margin-left: -15px;">
+      <%= render "common/footer" %>
+    </div>  </body>
 </html>
