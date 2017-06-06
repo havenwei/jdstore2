@@ -20,16 +20,14 @@
           </p >
           <hr>
         </div>
-        <div> 数量 : <%= @fitting.quantity %> </div><br>
+        <% if @fitting.quantity.presence %>
+          <div> 数量 : <%= @fitting.quantity %> </div><br>
+        <% end %>  
         <div class="product-price"> ￥ <%= @fitting.price %> </div>
         <!--加入购物车开始-->
         <br><br><hr>
         <div style="margin-top:10px;">
-          <% if @fitting.quantity > 0 %>
             <%= link_to("就选这个", add_to_custom_board_fitting_path(@fitting), :method => :post, :class => "btn btn-lg btn-warning") %>
-          <% else %>
-            已销售一空
-          <% end %>
         </div>
         <!--加入购物车结束-->
       </div>
