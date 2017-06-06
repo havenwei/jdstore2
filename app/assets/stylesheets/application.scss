@@ -19,12 +19,14 @@
 @import "font-awesome";
 
 
-
  //-----正文部分开始------
  * {
    margin: 0px;
    padding: 0px;
  }
+ html { height: 100%;}
+  body { min-height: 100%; display: flex; flex-direction: column;}
+  .content { flex: 1;}
  body {
    margin: 0px;
    border: 0px;
@@ -43,6 +45,7 @@
    width: 1000px;//正文内容居中占俱页面的位置
    margin-left: auto;
    margin-right: auto;
+   margin-bottom: 55px;
  }
  #nav_war h1 {
    width: 100%;
@@ -62,7 +65,6 @@
    list-style-type: none;
    margin: 0px;
    padding: 0px;
-   overflow: hidden;
  }
  #nav_war ul li a {
    text-decoration: none;
@@ -78,7 +80,6 @@
    font-size: 20px;
    line-height: 40px;
    text-align: center;
-   opacity: .8;
    border: 0px solid #fbf9f0;//设置边框样式
 
  }
@@ -99,7 +100,7 @@
  #main-content {
    width: 100%;
    height: 500px;//背景图片的高度
-   background: url("https://static.pexels.com/photos/160174/pexels-photo-160174.jpeg") no-repeat;
+   background: url(bkg.jpg) no-repeat;
    background-size: cover;
    font-size: 20px;
    color: #71604c;
@@ -381,7 +382,7 @@
    width: 100%;
    height: 200px;
    line-height: 10px;
-   background: url("https://ww2.sinaimg.cn/large/006tNc79gy1fg4hrb4bubj315c0aydkx.jpg") no-repeat;
+   background: url(麻的，我们来真的13.jpg) no-repeat;
    background-size: cover;
  }
  #nav2_war h1 a {
