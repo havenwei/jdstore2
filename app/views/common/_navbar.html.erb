@@ -38,47 +38,17 @@
   </div>
   <!--购物车与登录navbar结束-->
 
-  <!--正文内容4开始-->
-  <div id="third6">
-    <h2>FAQ</h2>
-    <div id="third7"><img src="https://ww3.sinaimg.cn/large/006tNc79gy1fg4hgtx01dj314405qgms.jpg"><br>
-      <ul id="third8" class="nav nav-tabs">
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">这个能帮我选尺寸小的飘窗吗？我家飘窗很小。<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a data-toggle="dropdown" href="#">可以的。在详情页中，根据引导图的尺寸测量方式，给我们提供您的窗户尺寸，就可以给您进行私人定制。</a></li>
-          </ul>
-        </li>
-      </ul>
-      <ul id="third8" class="nav nav-tabs">
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">这个按宽还是按高计算钱，还是按平方？<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a data-toggle="dropdown" href="#">按尺寸计算价钱，您提供尺寸，我们帮您算。</a></li>
-          </ul>
-        </li>
-      </ul>
-      <ul id="third8" class="nav nav-tabs">
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">遮光度怎样，我怕光啊！。<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a data-toggle="dropdown" href="#">有30%～100%的遮光度可供选择。</a></li>
-          </ul>
-        </li>
-      </ul>
-      <!--正文内容4结束-->
+
 
 <div id="nav_war">
       <h1><a href="/">晨光布艺</a></h1>
       <ul>
-        <li><a href="#">惑</a></li>
+        <li><a href="/fittings">绍</a>
         <li><a href="/fittings">品</a>
           <ul>
-            <li><a href="#">款式</a></li>
-            <li><a href="#">主帘</a></li>
-            <li><a href="#">罗马杆</a></li>
-            <li><a href="#">纱帘</a></li>
-            <li><a href="#">其他</a></li>
+            <li><%= link_to("样式", fittings_path(category: '样式')) %></li>
+            <li><%= link_to("布料", fittings_path(category: '布料')) %></li>
+            <li><%= link_to("罗马杆", fittings_path(category: '罗马杆')) %></li>
           </ul>
         </li>
         <li><a href="/">首页</a></li>
