@@ -24,9 +24,12 @@
    margin: 0px;
    padding: 0px;
  }
- html { height: 100%;}
-  body { min-height: 100%; display: flex; flex-direction: column;}
-  .content { flex: 1;}
+
+ h2 {
+   padding-top: 30px;
+   padding-bottom: 40px;
+ }
+
  body {
    margin: 0px;
    border: 0px;
@@ -38,6 +41,7 @@
    text-align: center; //让所以文本居中放置
  }
 
+
  //------nav部分开始(首页)--------
  #nav_war {
    margin: 0px;
@@ -46,6 +50,9 @@
    margin-left: auto;
    margin-right: auto;
    margin-bottom: 55px;
+   position: relative;
+   z-index: 100;
+
  }
  #nav_war h1 {
    width: 100%;
@@ -472,3 +479,10 @@ transition: all ease-in-out 0.45s;//延迟0.45s出现的响应式按钮阴影
   float: left;
 }
 //--------products页面产品列表结束---------
+
+//--------table--------
+th {
+  text-align: center;
+}
+
+//-------table end------

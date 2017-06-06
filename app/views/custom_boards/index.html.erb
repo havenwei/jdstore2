@@ -1,33 +1,54 @@
-<div class="col-md-12">
-    <h2> 定制面板 </h2>
+<div class="col-md-10 col-md-offset-1">
+  <h2> 定制面板 </h2>
 
-    <%= simple_form_for current_custom do |f| %>
-      <%= f.input :window_width %>
-      <%= f.input :window_height %>
-      <%= f.input :useto, label: "用途",
+  <%= simple_form_for current_custom do |f| %>
+
+  <div class="col-md-3">
+    <div class="input-group">
+      <span class="input-group-addon">窗宽</span>
+      <%= f.input :window_width, label: false %>
+      <span class="input-group-addon">米</span>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="input-group">
+      <span class="input-group-addon">窗高</span>
+      <%= f.input :window_height, label: false%>
+      <span class="input-group-addon">米</span>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="input-group">
+      <span class="input-group-addon">用途</span>
+      <%= f.input :useto, label: false,
           collection:["客厅", "主卧", "次卧", "儿童房", "老人房", "书房", "其他"], include_blank: '请选择'%>
-      <%= f.submit "更新", data: {disable_with: "Submitting..."} %>
-    <% end %>
+    </div>
+  </div>
 
-    <%=link_to("重置方案", clean_custom_boards_path, method: :delete,
-                                class: "btn btn-default pull-right ",
-                                data: {confirm: "你确定要重置窗帘方案吗？"}) %>
+  <div class="col-md-1">
+    <%= f.submit "更新", class: "btn btn-default", data: {disable_with: "Submitting..."} %>
+  </div>
+  <% end %>
 
+  <%=link_to("重置方案", clean_custom_boards_path, method: :delete,
+                              class: "btn btn-default pull-right",
+                              data: {confirm: "你确定要重置窗帘方案吗？"}) %>
 
+<br><br><br>
     <table class="table table-bordered">
       <thead>
         <tr>
           <th>#</th>
           <th>名称</th>
-          <th>单价</th>
           <th>尺寸（进一法）</th>
-          <th>计算公式</th>
+          <th>单价</th>
           <th>小计（四舍五入）</th>
           <th>操作选项</th>
         </tr>
       </thead>
       <tbody>
-
         <% current_custom.custom_items.each do |custom_item| %>
           <tr>
             <td>
@@ -43,24 +64,25 @@
               <%= link_to(custom_item.fitting.title, fitting_path(custom_item.fitting)) %>
             </td>
             <td>
-              <%= custom_item.fitting.price %>
-            </td>
-            <td>
               <%= simple_form_for custom_item, url: custom_item_path(custom_item) do |f| %> <!-- 部件尺寸修改 -->
-                <%= f.input :size  %>
-                <%= f.submit "更新", data: {disable_with: "Submitting..."} %>
+              <div class="input-group">
+                <%= f.input :size, label: false %>
+                <span class="input-group-btn">
+                  <%= f.submit "更新", class: "btn btn-default", data: {disable_with: "Submitting..."} %>
+                </span>
+              </div>
               <% end %>
+              <%= render_custom_item_formula(custom_item) %>
             </td>
             <td>
-              <%= render_custom_item_formula(custom_item) %>
+              <%= custom_item.fitting.price %>
             </td>
             <td>
               <%= render_custom_item_subtotal(custom_item) %> <!-- 部件价格小计 -->
             </td>
             <td>
-              <%= link_to custom_item_path(custom_item), method: :delete do %>
-                <i class="fa fa-trash"></i>
-              <% end %>
+              <%= link_to custom_item_path(custom_item), method: :delete, class: "btn btn-xs  btn-warning",
+                  data: { confirm: "Are you sure?" } do %><i class="fa fa-trash-o"></i><% end %>
             </td>
           </tr>
         <% end %>
@@ -81,6 +103,8 @@
     <hr>
 
     <div class="checkout clearfix">
-      <%= link_to("生成方案", account_designs_path, method: :post, class: "btn btn-lg btn-danger pull-right") %>
+      <%= link_to("生成方案", account_designs_path, method: :post, class: "btn btn-warning pull-right") %>
     </div>
+
+    <br><br>
 </div>

@@ -1,13 +1,43 @@
+<body>
+<!--navbar内容开始-->
+<div id="nav2_war">
+      <h1><a href="/"></a></h1>
+</div><br><br>
+<!--navbar内容结束-->
 
-  <% @fittings.each do |fitting| %>
-    <div class="col-xs-6 col-md-3">
-      <%= link_to fitting_path(fitting) do %>
-        <% if fitting.image.present? %>
-          <%= image_tag(fitting.image.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag(url_to_image('NoPic'),class: "thumbnail") %>
+
+
+<!--产品列表内容开始-->
+<div id="products">
+  <div id="product1" style="margin-left: 20px; margin-buttom: 20px; border-radius: 8px; ">
+    <% @fittings.each do |fitting| %>
+
+      <div class="col-xs-6 col-md-3">
+        <%= link_to fitting_path(fitting) do %>
+          <% if fitting.image.present? %>
+            <%= image_tag(fitting.image.thumb.url, class: "thumbnail") %>
+          <% else %>
+            <%= image_tag(url_to_image('NoPic'),class: "thumbnail") %>
+          <% end %>
         <% end %>
-      <% end %>
-      <%= fitting.title %> ￥ <%= fitting.price %>
-    </div>
-  <% end %>
+        <%= fitting.title %> ￥ <%= fitting.price %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+<!--产品列表内容结束-->
+</body>
+
+<!--产品图片飞入效果开始-->
+<script>
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    });
+});
+$(".thumbnail").mouseenter(function () {
+    $(this).fadeOut(300).fadeIn(100)
+})
+</script>
+<!--产品图片飞入效果结束-->

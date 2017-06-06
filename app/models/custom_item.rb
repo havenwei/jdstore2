@@ -3,7 +3,7 @@ class CustomItem < ApplicationRecord
   belongs_to :fitting
 
   def subtotal
-    subtotal = (fitting.price * itself.size).round
+    subtotal = (fitting.price * itself.size).round(1)
   end
 
   def calculator(category)
