@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>晨光布艺</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="signup.scss" type="text/css" />
+<script type="text/javascript"></script>
+</head>
+
+<style>
+body {
+  background: rgba(216, 214, 206, 0.94) ;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+.container {
+  margin: 25px auto;
+  width: 900px;
+  position: relative;
+}
+#content {
+  position: relative;
+  width: 400px;
+  height: 750px;
+  margin: 0 auto;
+  padding: 25px 0 0;
+  background: #fbf9f0;
+  text-align: center;
+  box-shadow: 1px 5px 10px 3px #8f8e89;
+  padding-left: 25px 0 0;
+  border: 1px solid #c4c6ca;
+}
+</style>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>
