@@ -40,6 +40,12 @@ class Admin::FittingsController < ApplicationController
     end
   end
 
+  def destroy
+    @fitting = Fitting.find(params[:id])
+    @fitting.destroy
+    redirect_to admin_fittings_path, alert: "配件已删除！"
+  end
+
   private
 
   def fitting_params
