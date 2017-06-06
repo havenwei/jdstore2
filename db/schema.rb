@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170603155237) do
+ActiveRecord::Schema.define(version: 20170604090450) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -26,36 +26,36 @@ ActiveRecord::Schema.define(version: 20170603155237) do
   end
 
   create_table "custom_boards", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "useto"
-    t.integer  "window_height"
-    t.integer  "window_width"
+    t.float    "window_height", default: 0.0
+    t.float    "window_width",  default: 0.0
   end
 
   create_table "custom_items", force: :cascade do |t|
     t.integer  "custom_board_id"
     t.integer  "fitting_id"
-    t.integer  "size",            default: 1
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.float    "size",            default: 0.0
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "design_lists", force: :cascade do |t|
     t.integer  "design_id"
     t.string   "fitting_id"
-    t.integer  "size"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.float    "size",       default: 0.0
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "designs", force: :cascade do |t|
     t.integer  "total",         default: 0
     t.integer  "user_id"
-    t.integer  "window_height"
-    t.integer  "window_width"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.float    "window_height", default: 0.0
+    t.float    "window_width",  default: 0.0
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "title"
   end
 
