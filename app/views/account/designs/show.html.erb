@@ -1,0 +1,59 @@
+<div class="col-md-10 col-md-offset-1">
+<h2><%= @design.title %>窗帘方案</h2>
+
+窗宽：<%= @design.window_width %> 窗高：<%= @design.window_height %>
+
+<div class="pull-right">
+ 总计：<%= @design.total_price %> CNY
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>部件</th>
+      <th>单价</th>
+      <th>尺寸</th>
+      <th>小计</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @design.design_lists.each do |design_list| %>
+    <tr>
+      <% if design_list.fitting.presence %>
+        <td>
+          <%= link_to fitting_path(design_list.fitting) do %>
+            <% if design_list.fitting.image.present? %>
+              <%= image_tag(design_list.fitting.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag(url_to_image("NoPic"), class: "thumbnail") %>
+            <% end %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to(design_list.fitting.title, fitting_path(design_list.fitting)) %>
+        </td>
+        <td>
+          <%= design_list.fitting.price %>
+        </td>
+        <td>
+          <%= design_list.size %>
+        </td>
+        <td>
+          <%= design_list.subtotal %>
+        </td>
+      <% else %>
+        <td>已失效</td>
+        <td>已失效</td>
+        <td>已失效</td>
+        <td><%= design_list.size %></td>
+        <td><%= design_list.subtotal %></td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to("返回方案列表", account_designs_path) %>
+
+</div>

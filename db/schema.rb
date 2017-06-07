@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170521080432) do
+ActiveRecord::Schema.define(version: 20170604090450) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -25,6 +25,40 @@ ActiveRecord::Schema.define(version: 20170521080432) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "custom_boards", force: :cascade do |t|
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "useto"
+    t.float    "window_height", default: 0.0
+    t.float    "window_width",  default: 0.0
+  end
+
+  create_table "custom_items", force: :cascade do |t|
+    t.integer  "custom_board_id"
+    t.integer  "fitting_id"
+    t.float    "size",            default: 0.0
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  create_table "design_lists", force: :cascade do |t|
+    t.integer  "design_id"
+    t.string   "fitting_id"
+    t.float    "size",       default: 0.0
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "designs", force: :cascade do |t|
+    t.integer  "total",         default: 0
+    t.integer  "user_id"
+    t.float    "window_height", default: 0.0
+    t.float    "window_width",  default: 0.0
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "title"
+  end
+
   create_table "fittings", force: :cascade do |t|
     t.string   "title"
     t.string   "pid"
@@ -33,6 +67,7 @@ ActiveRecord::Schema.define(version: 20170521080432) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "image"
+    t.string   "category"
   end
 
   create_table "orders", force: :cascade do |t|

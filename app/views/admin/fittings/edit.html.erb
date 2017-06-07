@@ -5,6 +5,7 @@
     <%= simple_form_for [:admin, @fitting] do |f| %>
       <%= f.input :title %>
       <%= f.input :pid %>
+      <%= f.input :category, collection:["样式", "布料", "罗马杆"], include_blank: false %>
       <%= f.input :quantity %>
       <%= f.input :price %>
       <% if @fitting.image.present? %>

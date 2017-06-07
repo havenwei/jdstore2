@@ -1,0 +1,49 @@
+<div class="col-md-10 col-md-offset-1">
+  <h2> 窗帘设计方案 </h2>
+
+  <div class="total clearfix">
+    <span class="pull-right">
+      <% sum = 0 %>
+      <% current_user.designs.each do |design| %>
+        <% sum += design.total_price %>
+      <% end %>
+      总计 <%= sum %> CNY
+    </span>
+  </div>
+
+  <table class="table table-bordered">
+
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>价格</th>
+            <th>生成时间</th>
+            <th>操作选项</th>
+
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <% @designs.each do |design| %>
+          <tr>
+            <td> <%= link_to(design.title, account_design_path(design)) %> </td>
+            <td> <%= design.total_price %> </td>
+            <td> <%= design.created_at.to_s(:long) %> </td>
+            <td>
+              <%= link_to account_design_path(design), method: :delete, class: "btn btn-xs  btn-warning",
+                  data: { confirm: "Are you sure?" } do %><i class="fa fa-trash-o"></i><% end %>
+            </td>
+          </tr>
+          <% end %>
+
+        </tbody>
+
+  </table>
+
+
+  <div class="checkout clearfix">
+    <%= link_to("生成订单", checkout_account_designs_path, method: :post, class: "btn btn-warning pull-right")  %>
+  </div>
+
+</div>

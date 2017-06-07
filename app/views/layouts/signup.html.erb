@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JDstore 后台</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container-fluid" style="margin-left: -15px;">
+      <div class="row">
+        <%= render "common/navbar" %>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <%= yield %>
+        </div>
+      </div>
+      <br>
+      <%= render "common/footer" %>
+
+    </div>
+  </body>
+</html>

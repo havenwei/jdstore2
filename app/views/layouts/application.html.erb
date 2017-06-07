@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>晨光布艺</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>晨光布艺</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <!--思源黑体 字体插入开始-->
+  <script type="text/javascript" src="http://cdn.webfont.youziku.com/wwwroot/js/wf/youziku.api.min.js"></script>
+  <!--思源黑体 字体插入结束-->
+  <!--github的fontawesome图标插入开始-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--github的fontawesome图标插入结束-->
+</head>
 
   <body>
-    <div class="container-fluid">
-          <div class="row">
-            <%= render "common/navbar" %>
-          </div>
-            <%= render "common/flashes" %>
-
-
-        </div>
+    <div class="content">
+      <div class="container-fluid">
         <div class="row">
+          <%= render "common/navbar" %>
           <%= yield %>
         </div>
+      </div>
+    </div>
 
-        <%= render "common/footer" %>
+      <%= render "common/footer" %>
 
   </body>
 </html>

@@ -1,101 +1,43 @@
-<style media="screen">
-.pdt-ind {
-    background: linear-gradient(10deg, #82939e,#f7f0dc ), url(""); //在背景图片上做渐变效果 线性渐变 颜色号 图片地址
-    display: block;
-    background-attachment: fixed; //fixed使得背景图片缩放比例适中；如果使用auto就会放大到只看到图片的一个部分
-    background-repeat: no-repeat; //背景图片不重复放置
-    background-position: center top; //使得背景图片在页面中 置中、置顶
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; //cover使得背景图片在页面中铺满
-    border-style: none;
-    margin-left: auto; //修改后无变化
-    margin-right: auto; //修改后无变化
-    margin-bottom: 0; //修改后无变化
-    border-radius: 0; //修改后无变化
-    min-height: 2880px; //背景图片的高度设置!!!!
-    position: relative;
-}
-  .productsshow-evey{
-padding-left: 40px;
-padding-right: 40px;
-width: 100%;
-background-color: grey;
-background-image: url("https://static.pexels.com/photos/4827/nature-forest-trees-fog.jpeg");
-background-size: cover;
-background-repeat: repeat-y;
-  }
-  .pdc-description{
-    //background-color: rgba(0, 0, 0, 0.3);
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-      padding-top: 30px;
-  }
-  .reviewbox{
-    background-color: rgba(255, 255, 255, 0.8);
-    //box-shadow: 1px 1px 1px grey;
-    padding-bottom: 30px;
-  }
-  .heart-e{
-    width: 100px;
-    height:200px;
-  }
 
-</style>
-<body class="pdt-ind">
+<body class="pdt-inding">
   <div class="productsshow-evey">
-
-
-    <div class="col-md-6" style="padding-top:30px;">
+    <!--左边产品图片开始-->
+    <div class="col-md-6" style="padding-top:60px; padding-left:190px;">
       <% if @product.image.present? %>
-
-
       <div id="zoom_01">
         <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
       </div>
-
-
       <% else %>
-        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "img-rounded") %>
       <% end %>
     </div>
-
-    <div class="col-md-6 pdc-description">
+    <!--左边产品图片结束-->
+    <!--右边产品文字介绍开始-->
+    <div class="col-md-6 pdc-description" style="padding-top:40px; padding-right:150px;">
       <h2> <%= @product.title %> </h2>
-
       <div style="height:100px;">
-
         <p>
           <%= @product.description %>
         </p >
         <hr>
       </div>
-      <div> 数量 : <%= @product.quantity %> </div>
-    </br>
-
+      <div> 数量 : <%= @product.quantity %> </div><br>
       <div class="product-price"> ￥ <%= @product.price %> </div>
-
-  <!--加入购物车开始-->
-      <div class="pull-right" style="margin-top:10px;">
+      <!--加入购物车开始-->
+      <br><br><hr>
+      <div style="margin-top:10px;">
         <% if @product.quantity > 0 %>
-      <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-lg btn-warning fa fa-shopping-cart") %>
-     <% else %>
-      已销售一空
-     <% end %>
-
+          <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-lg btn-warning fa fa-shopping-cart") %>
+        <% else %>
+          已销售一空
+        <% end %>
       </div>
-
-  <!--加入购物车结束-->
-
+      <!--加入购物车结束-->
     </div>
-
+    <!--右边产品文字介绍开始-->
   </div>
 </div>
-
-
-
+<br><br>
 
 <script type="text/javascript">
   $('#zoom_01').elevateZoom();

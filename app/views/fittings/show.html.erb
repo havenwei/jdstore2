@@ -1,22 +1,41 @@
-<div class="row">
-  <div class="col-md-6">
-    <% if @fitting.image.present? %>
-      <%= image_tag(@fitting.image.medium.url, class: "thumbnail") %>
-    <% else %>
-      <%= image_tag(url_to_image('NoPic'),class: "thumbnail") %>
-    <% end %>
-  </div>
-  <div class="col-md-6">
-    <h2> <%= @fitting.title %> </h2>
-    <div style="height:100px;">
-      <p>
-        <%= @fitting.pid %>
-      </p>
+  <body class="pdt-inding">
+    <div class="productsshow-evey">
+      <!--左边产品图片开始-->
+      <div class="col-md-6" style="padding-top:60px; padding-left:190px;">
+        <% if @fitting.image.present? %>
+        <div id="zoom_01">
+          <%= image_tag(@fitting.image.medium.url, class: "thumbnail") %>
+        </div>
+        <% else %>
+          <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "img-rounded") %>
+        <% end %>
+      </div>
+      <!--左边产品图片结束-->
+      <!--右边产品文字介绍开始-->
+      <div class="col-md-6 pdc-description" style="padding-top:40px; padding-right:150px;">
+        <h2> <%= @fitting.title %> </h2>
+        <div style="height:100px;">
+          <p>
+            <%= @fitting.pid %>
+          </p >
+          <hr>
+        </div>
+        <% if @fitting.quantity.presence %>
+          <div> 数量 : <%= @fitting.quantity %> </div><br>
+        <% end %>  
+        <div class="product-price"> ￥ <%= @fitting.price %> </div>
+        <!--加入购物车开始-->
+        <br><br><hr>
+        <div style="margin-top:10px;">
+            <%= link_to("就选这个", add_to_custom_board_fitting_path(@fitting), :method => :post, :class => "btn btn-lg btn-warning") %>
+        </div>
+        <!--加入购物车结束-->
+      </div>
+      <!--右边产品文字介绍开始-->
     </div>
-    <div> 数量 : <%= @fitting.quantity %> </div>
-    <div class="fitting-price"> ￥ <%= @fitting.price %> </div>
-    <div class="pull-right">
-      <%= link_to("加入购物车", "#", :class => "btn btn-danger btn-lg") %>
-    </div>
   </div>
-</div>
+  <br><br>
+
+  <script type="text/javascript">
+    $('#zoom_01').elevateZoom();
+  </script>
