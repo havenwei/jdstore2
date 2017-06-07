@@ -1,0 +1,254 @@
+
+<!-- 页面样式开始 -->
+<style>
+.vid {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+    margin-bottom: 100px;
+}
+
+.vid iframe,
+.vid object,
+.vid embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#fonco {
+  color: #71604c;
+  text-decoration: none;
+}
+#bgall {
+  background: #fbf9f0;
+  width: 1220px;
+  height: 500px;
+  line-height: 50px;/*控制每行的字距*/
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  font-weight: 100;
+  margin-left: -25px;
+  margin-bottom: 100px;
+}
+#bgall:hover {
+  box-shadow: 1px 5px 10px 6px rgba(123, 96, 10, 0.81);//透明度与阴影颜色
+  transition: all ease-in-out 0.45s;//延迟0.45s出现的响应式按钮阴影
+}
+#bgall p {
+  color: #71604c;
+  text-decoration: none;
+}
+#bgall h4 {
+  color: #71604c;
+  text-decoration: none;
+  padding: 2px;/*控制上边距*/
+}
+
+</style>
+<!-- 页面样式结束 -->
+
+
+
+
+<!-- Reference: http://avexdesigns.com/responsive-youtube-embed/ -->
+<div class="container">
+    <div class="row">
+      <div id="fonco">
+        <h2>各种不同窗帘需求的测量方法</h2>
+        <p>
+        <strong>当你了解了如何测量数据后，你可以返回<%= link_to "首页" ,root_path %>  或者直接进入<%= link_to "商品页面" ,fittings_path(category: '罗马杆') %>进行选购，为您私人定制您的<a href="/account/designs">设计方案</a>。</strong>
+        </p>
+        <hr>
+      </div><!--.fonco-->
+    </div><!--.row -->
+</div><!--./container -->
+
+  <div class="container">
+      <div class="row">
+
+          <!-- 视频讲解开始 -->
+          <div id="bgall">
+              <div class="col-md-4" style="padding-top:50px;">
+                  <p> NO.1</p>
+                  <h4>已安装好罗马杆的落地窗</h4>
+                  <p> 的测量方法</p>
+                  <hr>
+                  <div>
+                      <p>窗帘宽 = 杆宽 * 2</p>
+                      <p>窗帘高 = 挂钩处到地面的高度 - 3cm </p>
+                      <p>把测量好的数据告诉接待你的客服 </p>
+                  </div>
+              </div><!--.col -->
+              <div class="col-md-8">
+                  <div class="vid" id="viid">
+                      <a><%= image_tag "晨光布艺测量1.gif", alt: "#"%></a>
+                  </div><!--./vid -->
+              </div><!--.col -->
+              <hr>
+          </div><!--#bgall -->
+          <!-- 视频讲解结束 -->
+          <!-- 视频讲解开始 -->
+          <div id="bgall">
+              <div class="col-md-4" style="padding-top:50px;">
+                  <p> NO.2</p>
+                  <h4>半窗 已安装好罗马杆 长款的半帘</h4>
+                  <p> 的测量方法</p>
+                  <hr>
+                  <div>
+                      <p>窗帘宽 = 杆宽 * 2</p>
+                      <p>窗帘高 = 挂钩处到地面的高度 + 20cm </p>
+                      <p>把测量好的数据告诉接待你的客服 </p>
+                  </div>
+              </div><!--.col -->
+              <div class="col-md-8">
+                  <div class="vid" id="viid">
+                      <a><%= image_tag "晨光布艺测量2.gif", alt: "#"%></a>
+                  </div><!--./vid -->
+              </div><!--.col -->
+              <hr>
+          </div><!--#bgall -->
+          <!-- 视频讲解结束 -->
+          <!-- 视频讲解开始 -->
+          <div id="bgall">
+              <div class="col-md-4" style="padding-top:50px;">
+                  <p> NO.3</p>
+                  <h4>半窗 已安装好罗马杆 短款的半帘</h4>
+                  <p> 的测量方法</p>
+                  <hr>
+                  <div>
+                      <p>窗帘宽 = 杆宽 * 2</p>
+                      <p>窗帘高 = 挂钩处到地面的高度 - 3cm </p>
+                      <p>把测量好的数据告诉接待你的客服 </p>
+                  </div>
+              </div><!--.col -->
+              <div class="col-md-8">
+                  <div class="vid" id="viid">
+                      <a><%= image_tag "晨光布艺测量3.gif", alt: "#"%></a>
+                  </div><!--./vid -->
+              </div><!--.col -->
+              <hr>
+          </div><!--#bgall -->
+          <!-- 视频讲解结束 -->
+          <!-- 视频讲解开始 -->
+          <div id="bgall">
+              <div class="col-md-4" style="padding-top:50px;">
+                  <p> NO.4</p>
+                  <h4> 半窗 已安装好罗马杆 打孔款窗帘</h4>
+                  <p> 的测量方法</p>
+                  <hr>
+                  <div>
+                      <p>窗帘宽 = 杆宽 * 2</p>
+                      <p>窗帘高 = 罗马杆上沿到地面的高度 - 1cm </p>
+                      <p>把测量好的数据告诉接待你的客服 </p>
+                  </div>
+              </div><!--.col -->
+              <div class="col-md-8">
+                  <div class="vid" id="viid">
+                      <a><%= image_tag "晨光布艺测量4.gif", alt: "#"%></a>
+                  </div><!--./vid -->
+              </div><!--.col -->
+              <hr>
+          </div><!--#bgall -->
+          <!-- 视频讲解结束 -->
+          <!-- 视频讲解开始 -->
+          <div id="bgall">
+              <div class="col-md-4" style="padding-top:50px;">
+                  <p> NO.5</p>
+                  <h4> 已安装好轨道 飘窗内置窗帘</h4>
+                  <p> 的测量方法</p>
+                  <hr>
+                  <div>
+                      <p>窗帘宽 = （A宽 + B宽 + C宽） * 2</p>
+                      <p>窗帘高 = 挂钩处到地面的高度</p>
+                      <p>把测量好的数据告诉接待你的客服 </p>
+                  </div>
+              </div><!--.col -->
+              <div class="col-md-8">
+                  <div class="vid" id="viid">
+                      <a><%= image_tag "晨光布艺测量5.gif", alt: "#"%></a>
+                  </div><!--./vid -->
+              </div><!--.col -->
+              <hr>
+          </div><!--#bgall -->
+          <!-- 视频讲解结束 -->
+          <!-- 视频讲解开始 -->
+          <div id="bgall">
+              <div class="col-md-4" style="padding-top:50px;">
+                  <p> NO.6</p>
+                  <h4> 已安装好轨道 已铺设飘窗垫 飘窗内置窗帘</h4>
+                  <p> 的测量方法</p>
+                  <hr>
+                  <div>
+                      <p>窗帘宽 = （A宽 + B宽 + C宽） * 2</p>
+                      <p>窗帘高 = 挂钩处到地面的高度 - 飘窗垫厚度</p>
+                      <p>把测量好的数据告诉接待你的客服 </p>
+                  </div>
+              </div><!--.col -->
+              <div class="col-md-8">
+                  <div class="vid" id="viid">
+                      <a><%= image_tag "晨光布艺测量6.gif", alt: "#"%></a>
+                  </div><!--./vid -->
+              </div><!--.col -->
+              <hr>
+          </div><!--#bgall -->
+          <!-- 视频讲解结束 -->
+          <!-- 视频讲解开始 -->
+          <div id="bgall">
+              <div class="col-md-4" style="padding-top:50px;">
+                  <p> NO.7</p>
+                  <h4> 未装罗马杆的窗帘 做满墙效果</h4>
+                  <p> 的测量方法</p>
+                  <hr>
+                  <div>
+                      <p>宽 = 墙宽</p>
+                      <p>高 = 墙高 </p>
+                      <p>把测量好的数据告诉接待你的客服 </p>
+                  </div>
+              </div><!--.col -->
+              <div class="col-md-8">
+                  <div class="vid" id="viid">
+                      <a><%= image_tag "晨光布艺测量7.gif", alt: "#"%></a>
+                  </div><!--./vid -->
+              </div><!--.col -->
+              <hr>
+          </div><!--#bgall -->
+          <!-- 视频讲解结束 -->
+          <!-- 视频讲解开始 -->
+          <div id="bgall">
+              <div class="col-md-4" style="padding-top:50px;">
+                  <p> NO.8</p>
+                  <h4> 未装罗马杆的窗帘 不做满墙效果</h4>
+                  <p> 的测量方法</p>
+                  <hr>
+                  <div>
+                      <p>宽 = 墙宽</p>
+                      <p>高 = 墙高 </p>
+                      <p>把测量好的数据告诉接待你的客服 </p>
+                  </div>
+              </div><!--.col -->
+              <div class="col-md-8">
+                  <div class="vid" id="viid">
+                      <a><%= image_tag "晨光布艺测量8.gif", alt: "#"%></a>
+                  </div><!--./vid -->
+              </div><!--.col -->
+              <hr>
+          </div><!--#bgall -->
+          <!-- 视频讲解结束 -->
+
+      </div><!--./row -->
+  </div><!--./container -->
+
+
+  <div class="container">
+      <div class="row">
+        <div id="fonco">
+          <p>
+          <strong>当你了解了如何测量数据后，你可以返回<%= link_to "首页" ,root_path %>  或者直接进入<%= link_to "商品页面" ,fittings_path(category: '罗马杆') %>进行选购，为您私人定制您的<a href="/account/designs">设计方案</a>。</strong>
+          </p>
+          <hr>
+        </div><!--.fonco-->
+      </div><!--.row -->
+  </div><!--./container -->
