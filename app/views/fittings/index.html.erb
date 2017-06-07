@@ -9,10 +9,10 @@
 <!--产品列表内容开始-->
 <!-- <div id="products"> -->
   <!-- <div id="product1" style="margin-left: 20px; margin-buttom: 20px; border-radius: 8px; "> -->
-  <div class="col-md-10 col-md-offset-1">
+  <div id="third-1">
     <% @fittings.each do |fitting| %>
 
-      <div class="col-xs-6 col-md-3", style="margin-bottom:30px;">
+      <div id="third-11", style="margin-bottom:30px;">
         <%= link_to fitting_path(fitting) do %>
           <% if fitting.image.present? %>
             <%= image_tag(fitting.image.thumb.url, class:"img-rounded") %>
@@ -21,7 +21,7 @@
           <% end %>
         <% end %>
         <br>
-        <%= fitting.title %> ￥ <%= fitting.price %>
+        <h5><%= fitting.title %> ￥ <%= fitting.price %></h5>
     </div>
     <% end %>
   </div>
@@ -30,7 +30,7 @@
 <!--产品列表内容结束-->
 
 <!--产品图片飞入效果开始-->
-<script>
+<!-- <script>
 $(document).ready(function(){
     $("#flip").click(function(){
         $("#panel").slideToggle("slow");
@@ -39,5 +39,5 @@ $(document).ready(function(){
 $(".img-rounded").mouseenter(function () {
     $(this).fadeOut(300).fadeIn(100)
 })
-</script>
+</script> -->
 <!--产品图片飞入效果结束-->

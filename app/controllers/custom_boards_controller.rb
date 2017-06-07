@@ -12,7 +12,9 @@ class CustomBoardsController < ApplicationController
   def update
     current_custom.update(custom_board_params)
     current_custom.custom_items.each do |custom_item|
-      custom_item.size = custom_item.calculator(custom_item.fitting.category)
+      if custom_item.fitting.presence
+        custom_item.size = custom_item.calculator(custom_item.fitting.category)
+      end  
       custom_item.save
     end
 

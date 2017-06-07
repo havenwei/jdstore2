@@ -5,8 +5,8 @@ class DesignList < ApplicationRecord
   def subtotal
     subtotal = 0
     if fitting.present? and fitting.price.presence
-      subtotal = (fitting.price * itself.size).round(1)
+      subtotal = (fitting.price * itself.size).round
     end
-    subtotal  
+    subtotal
   end
 end

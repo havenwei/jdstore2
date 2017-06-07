@@ -488,3 +488,73 @@ img {
   margin-left: 0px!important;
   margin-right: 0px!important
 }
+
+//------fitting box-1开始-----
+#third-1 {
+  // height: 900px;
+  width: 920px;//正文内容居中占俱页面的位置
+  background: #fbf9f0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -30px;
+  margin-bottom: 30px;
+  border-radius: 8px;//背景的圆角度数
+  // box-shadow: 1px 5px 10px 6px rgba(148, 138, 112, 0.81);//透明度与阴影颜色
+}
+#third-1:hover {
+
+}
+#third-11 {
+  width: 230px;
+  height: 300px;
+  padding-top: 20px;
+  display: inline;
+  float: left;
+  text-align: center;
+  border-radius: 8px;//背景的圆角度数
+}
+#third-11 img {
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;//背景的圆角度数
+}
+#third-11 h3 {
+  color: #71604c;
+}
+#third-11  p {
+  color: #71604c;
+}
+#third-11:hover {
+  box-shadow: 1px 5px 10px 6px rgba(148, 138, 112, 0.81);//透明度与阴影颜色
+  transition: all ease-in-out 0.45s;//延迟0.45s出现的响应式按钮阴影
+}
+//------fitting box-11结束-----
+
+#third-box1 {
+  // width: 430px;
+  // height: 430px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  padding-top: 20px;
+  padding-bottom: 35px;
+  display: inline;
+  float: left;
+  text-align: center;
+  border-radius: 8px;//背景的圆角度数
+}
+#third-box1 img {
+  // width: 400px;
+  // height: 400px;
+  border-radius: 8px;//背景的圆角度数
+}
+#third-box1 h1,h2,h3,h4,h5 {
+  color: #71604c;
+}
+#third-box1 p {
+  color: #71604c;
+}
+#third-box1:hover {
+  box-shadow: 1px 5px 10px 6px rgba(148, 138, 112, 0.81);//透明度与阴影颜色
+  transition: all ease-in-out 0.45s;//延迟0.45s出现的响应式按钮阴影
+}
+//------fitting third-box1结束-----
