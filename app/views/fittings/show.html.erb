@@ -1,7 +1,7 @@
   <!-- <body class="pdt-inding">
     <div class="productsshow-evey"> -->
       <!--左边产品图片开始-->
-    <div id="third-box1" class="col-md-10 col-md-offset-1">  
+    <div id="third-box1" class="col-md-10 col-md-offset-1">
       <div class="col-md-6">
         <% if @fitting.image.present? %>
         <!-- <div id="zoom_01"> -->
@@ -22,9 +22,10 @@
           <hr>
         </div>
         <% if @fitting.quantity.presence %>
+          <div> 规格 : <%= @fitting.spec %> </div><br>
           <div> 数量 : <%= @fitting.quantity %> </div><br>
         <% end %>
-        <div class="product-price"> ￥ <%= @fitting.price %> </div>
+        <div class="product-price"> ￥ <%= @fitting.price %>/m </div>
         <!--加入购物车开始-->
         <br><br><hr>
         <div style="margin-top:10px;">

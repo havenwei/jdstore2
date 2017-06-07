@@ -42,6 +42,7 @@
         <tr>
           <th>#</th>
           <th>名称</th>
+          <th>规格</th>
           <th>尺寸（进一法）</th>
           <th>单价</th>
           <th>小计（四舍五入）</th>
@@ -65,6 +66,13 @@
                 <%= link_to(custom_item.fitting.title, fitting_path(custom_item.fitting)) %>
               </td>
               <td>
+                <% if custom_item.fitting.spec == 'none' %>
+                /
+                <% else %>
+                  <%= custom_item.fitting.spec %>
+                <% end %>
+              </td>
+              <td>
                 <%= simple_form_for custom_item, url: custom_item_path(custom_item) do |f| %> <!-- 部件尺寸修改 -->
                 <div class="input-group">
                   <%= f.input :size, label: false %>
@@ -73,7 +81,8 @@
                   </span>
                 </div>
                 <% end %>
-                <%= render_custom_item_formula(custom_item) %>
+                <br>
+                <%= render_custom_item_formula(custom_item) %> <!-- 显示计算公式 -->
               </td>
               <td>
                 <%= custom_item.fitting.price %>
