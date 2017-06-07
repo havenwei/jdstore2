@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
   # root 'products#index'
 
+  get '/about/', to:'fittings#about'
+
   resources :products do
     member do
       post :add_to_cart
