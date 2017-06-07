@@ -11,8 +11,11 @@ class CustomItemsController < ApplicationController
     @custom_item = CustomItem.find(params[:id])
     @fitting = @custom_item.fitting
     @custom_item.destroy
-
-    flash[:warning] = "已从窗帘方案中删除：#{@fitting.title}"
+    if @fitting.presence
+      flash[:warning] = "已从窗帘方案中删除：#{@fitting.title}"
+    else
+      flash[:alert] = "已删除失效商品"
+    end
     redirect_to :back
   end
 

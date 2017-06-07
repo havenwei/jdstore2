@@ -51,39 +51,51 @@
       <tbody>
         <% current_custom.custom_items.each do |custom_item| %>
           <tr>
-            <td>
-              <%= link_to fitting_path(custom_item.fitting) do %>
-                <% if custom_item.fitting.image.present? %>
-                  <%= image_tag(custom_item.fitting.image.thumb.url, class: "thumbnail") %>
-                <% else %>
-                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% if custom_item.fitting.presence %>
+              <td>
+                <%= link_to fitting_path(custom_item.fitting) do %>
+                  <% if custom_item.fitting.image.present? %>
+                    <%= image_tag(custom_item.fitting.image.thumb.url, class: "thumbnail") %>
+                  <% else %>
+                    <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                  <% end %>
                 <% end %>
-              <% end %>
-            </td>
-            <td>
-              <%= link_to(custom_item.fitting.title, fitting_path(custom_item.fitting)) %>
-            </td>
-            <td>
-              <%= simple_form_for custom_item, url: custom_item_path(custom_item) do |f| %> <!-- 部件尺寸修改 -->
-              <div class="input-group">
-                <%= f.input :size, label: false %>
-                <span class="input-group-btn">
-                  <%= f.submit "更新", class: "btn btn-default", data: {disable_with: "Submitting..."} %>
-                </span>
-              </div>
-              <% end %>
-              <%= render_custom_item_formula(custom_item) %>
-            </td>
-            <td>
-              <%= custom_item.fitting.price %>
-            </td>
-            <td>
-              <%= render_custom_item_subtotal(custom_item) %> <!-- 部件价格小计 -->
-            </td>
-            <td>
-              <%= link_to custom_item_path(custom_item), method: :delete, class: "btn btn-xs  btn-warning",
-                  data: { confirm: "Are you sure?" } do %><i class="fa fa-trash-o"></i><% end %>
-            </td>
+              </td>
+              <td>
+                <%= link_to(custom_item.fitting.title, fitting_path(custom_item.fitting)) %>
+              </td>
+              <td>
+                <%= simple_form_for custom_item, url: custom_item_path(custom_item) do |f| %> <!-- 部件尺寸修改 -->
+                <div class="input-group">
+                  <%= f.input :size, label: false %>
+                  <span class="input-group-btn">
+                    <%= f.submit "更新", class: "btn btn-default", data: {disable_with: "Submitting..."} %>
+                  </span>
+                </div>
+                <% end %>
+                <%= render_custom_item_formula(custom_item) %>
+              </td>
+              <td>
+                <%= custom_item.fitting.price %>
+              </td>
+              <td>
+                <%= render_custom_item_subtotal(custom_item) %> <!-- 部件价格小计 -->
+              </td>
+              <td>
+                <%= link_to custom_item_path(custom_item), method: :delete, class: "btn btn-xs  btn-warning",
+                    data: { confirm: "Are you sure?" } do %><i class="fa fa-trash-o"></i><% end %>
+              </td>
+            <% else %>
+              <td>已失效</td>
+              <td>已失效</td>
+              <td>已失效</td>
+              <td>已失效</td>
+              <td>已失效</td>
+              <td>
+                <%= link_to custom_item_path(custom_item), method: :delete, class: "btn btn-xs  btn-warning",
+                    data: { confirm: "Are you sure?" } do %><i class="fa fa-trash-o"></i><% end %>
+              </td>
+            <% end %>
           </tr>
         <% end %>
 

@@ -20,27 +20,35 @@
   <tbody>
     <% @design.design_lists.each do |design_list| %>
     <tr>
-      <td>
-        <%= link_to fitting_path(design_list.fitting) do %>
-          <% if design_list.fitting.image.present? %>
-            <%= image_tag(design_list.fitting.image.thumb.url, class: "thumbnail") %>
-          <% else %>
-            <%= image_tag(url_to_image("NoPic"), class: "thumbnail") %>
+      <% if design_list.fitting.presence %>
+        <td>
+          <%= link_to fitting_path(design_list.fitting) do %>
+            <% if design_list.fitting.image.present? %>
+              <%= image_tag(design_list.fitting.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag(url_to_image("NoPic"), class: "thumbnail") %>
+            <% end %>
           <% end %>
-        <% end %>
-      </td>
-      <td>
-        <%= link_to(design_list.fitting.title, fitting_path(design_list.fitting)) %>
-      </td>
-      <td>
-        <%= design_list.fitting.price %>
-      </td>
-      <td>
-        <%= design_list.size %>
-      </td>
-      <td>
-        <%= design_list.subtotal %>
-      </td>
+        </td>
+        <td>
+          <%= link_to(design_list.fitting.title, fitting_path(design_list.fitting)) %>
+        </td>
+        <td>
+          <%= design_list.fitting.price %>
+        </td>
+        <td>
+          <%= design_list.size %>
+        </td>
+        <td>
+          <%= design_list.subtotal %>
+        </td>
+      <% else %>
+        <td>已失效</td>
+        <td>已失效</td>
+        <td>已失效</td>
+        <td><%= design_list.size %></td>
+        <td><%= design_list.subtotal %></td>
+      <% end %>
     </tr>
     <% end %>
   </tbody>
