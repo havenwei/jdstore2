@@ -9,7 +9,7 @@
     <tr>
       <th>#</th>
       <th> 品名 </th>
-      <th> 货号 </th>
+      <th> 规格 </th>
       <th> 库存 </th>
       <th> 价格 </th>
       <th> 选项 </th>
@@ -30,7 +30,7 @@
         <% end %>
       </td>
       <td><%= link_to(fitting.title, admin_fitting_path(fitting)) %></td>
-      <td><%= fitting.pid %></td>
+      <td><%= fitting.spec %></td>
       <td><%= fitting.quantity %></td>
       <td><%= fitting.price %></td>
       <td>
